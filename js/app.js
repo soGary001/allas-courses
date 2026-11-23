@@ -304,6 +304,7 @@
     else facts += factRowTbd(T('factStart'));
     if (c.duration) facts += factRow(T('factDuration'), L(c.duration));
     if (c.hours) facts += factRow(T('factHours'), L(c.hours));
+    if (c.location) facts += factRow(T('factLocation'), c.location);
     if (c.schedule) facts += factRow(T('factSchedule'), L(c.schedule));
     if (c.classDates) facts += factRow(T('classDates'), c.classDates);
     if (c.competitionDate) facts += factRow(T('competitionDate'), L(c.competitionDate));
