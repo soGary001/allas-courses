@@ -6,7 +6,7 @@ const I18N = {
   zh: {
     timeDec: '2026年12月',
     timeTerm2: '2026–27 学年第二学期',
-    signupClosed: '报名已关闭',
+    signupClosed: '本学期已停止报名',
     signupEnquiry: '咨询报名',
     signupEmailNote: '通过邮件联系课程负责人',
     feeEnquiry: '请邮件咨询费用',
@@ -100,7 +100,7 @@ const I18N = {
   en: {
     timeDec: 'December 2026',
     timeTerm2: 'Term 2, 2026–27',
-    signupClosed: 'Registration closed',
+    signupClosed: 'Registration closed for this term',
     signupEnquiry: 'Enquire by email',
     signupEmailNote: 'Email the programme contacts',
     feeEnquiry: 'Email for fees',
@@ -194,7 +194,7 @@ const I18N = {
   th: {
     timeDec: 'ธันวาคม 2026',
     timeTerm2: 'ภาคเรียนที่ 2 ปี 2026–27',
-    signupClosed: 'ปิดรับสมัครแล้ว',
+    signupClosed: 'ปิดรับสมัครสำหรับภาคเรียนนี้แล้ว',
     signupEnquiry: 'สอบถามการสมัครทางอีเมล',
     signupEmailNote: 'ติดต่อผู้ดูแลหลักสูตรทางอีเมล',
     feeEnquiry: 'สอบถามค่าธรรมเนียมทางอีเมล',

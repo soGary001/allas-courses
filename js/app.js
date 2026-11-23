@@ -173,7 +173,7 @@
       ? '<span class="meta-item">🗓 ' + esc(st) + '</span>'
       : '<span class="meta-item meta-tbd">🗓 ' + T('tbd') + '</span>';
     var soonBadge = c.comingSoon ? '<span class="badge-soon">' + T('comingSoon') + '</span>' : '';
-    if (c.registrationClosed) soonBadge = '<span class="badge-soon">' + T('signupClosed') + '</span>';
+    var closedStatus = c.registrationClosed ? '<span class="registration-status">' + T('signupClosed') + '</span>' : '';
     var footHtml = c.comingSoon
       ? '<div class="card-foot card-foot-soon"><span class="coming-soon-tag">⏳ ' + T('comingSoon') + '</span></div>'
       : '<div class="card-foot">' +
@@ -184,11 +184,12 @@
           '</div>' +
         '</div>';
     return '' +
-      '<article class="card card-soon' + (c.comingSoon ? ' is-soon' : '') + '" data-id="' + c.id + '">' +
+      '<article class="card card-soon' + (c.comingSoon ? ' is-soon' : '') + (c.registrationClosed ? ' is-closed' : '') + (c.fullCover ? ' full-cover' : '') + '" data-id="' + c.id + '">' +
         '<div class="card-cover">' + soonBadge + '<img src="' + courseCover(c) + '" alt="' + esc(L(c.name)) + '" loading="lazy">' +
-          (c.comingSoon ? '' : '<span class="badge-cat">' + L(CATEGORIES[c.cat]) + '</span>') +
+          (c.comingSoon || c.fullCover ? '' : '<span class="badge-cat">' + L(CATEGORIES[c.cat]) + '</span>') +
         '</div>' +
         '<div class="card-body">' +
+          (c.fullCover ? '<span class="badge-cat">' + esc(L(CATEGORIES[c.cat])) + '</span>' : '') + closedStatus +
           '<h3 class="card-title">' + esc(L(c.name)) + '</h3>' +
           '<div class="card-meta">' +
             '<span class="meta-item">' + (SUBJECTS[c.subject].icon) + ' ' + esc(L(SUBJECTS[c.subject].name)) + '</span>' +
@@ -440,6 +441,9 @@
       return html;
     }
     var descParas = parseDesc(L(c.desc));
+    if (c.introImage) {
+      descParas += '<img class="intro-illustration" src="' + esc(c.introImage) + '" alt="' + esc(T('dOverview') + ' · ' + L(c.name)) + '" loading="lazy">';
+    }
     if (c.guideUrl) descParas += '<p><a href="' + esc(c.guideUrl) + '" target="_blank" rel="noopener noreferrer">' + T('courseGuide') + '</a></p>';
     var introSec = (descParas || noteSec)
       ? ('<section class="detail-sec ov-sec"><h2>' + (c.introTitle ? esc(L(c.introTitle)) : (c.cat === 'competition' ? T('dIntroComp') : T('dIntro'))) + '</h2>' + descParas + noteSec + '</section>')
@@ -448,12 +452,13 @@
     document.getElementById('detailRoot').innerHTML = '' +
       '<div class="detail-wrap">' +
         '<a class="back-link" href="#/">' + T('backToList') + '</a>' +
-        '<div class="detail-hero">' +
+        '<div class="detail-hero' + (c.fullCover ? ' full-cover' : '') + '">' +
           '<img class="detail-cover" src="' + courseCover(c) + '" alt="' + esc(L(c.name)) + '">' +
           '<div class="detail-hero-text">' +
             '<span class="badge-cat">' + L(CATEGORIES[c.cat]) + '</span>' +
             '<h1>' + esc(L(c.name)) + '</h1>' +
             '<div class="detail-tags">' +
+              (c.registrationClosed ? '<span class="registration-status">' + T('signupClosed') + '</span>' : '') +
               '<span class="chip chip-green">' + (SUBJECTS[c.subject].icon) + ' ' + esc(L(SUBJECTS[c.subject].name)) + '</span>' +
               '<span class="chip chip-green">🎓 ' + esc(gradeText(c)) + '</span>' +
               '<span class="chip ' + (c.price == null ? 'chip-tbd' : 'chip-wheat') + '">' +

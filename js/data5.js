@@ -875,7 +875,7 @@ Object.assign(COURSE_OVERVIEWS, {
         'Clear pathway into Debate / MUN / Leadership tracks'
       ] },
       { h: 'Programme Overview', table: { head: ['Category', 'Details'], rows: [
-        ['Programme Name', 'Debating & MUN Excellence Programme'],
+        ['Programme Name', 'Debating and MUN Excellence Programme'],
         ['Target Students', 'Year 4 – Year 6'],
         ['Schedule', 'Monday 3:40–4:40 pm'],
         ['Class Format', 'Small group (8 students)']
@@ -936,7 +936,7 @@ Object.assign(COURSE_OVERVIEWS, {
     ]
   },
 
-  /* ========== Debating & MUN Excellence Programme（专属大纲）
+  /* ========== Debating and MUN Excellence Programme（专属大纲）
    * 来源：Untitled document（修改)(1).docx（2026-08-14 嵌入） ========== */
   'speaking-debate-comp': {
     en: [
@@ -955,7 +955,7 @@ Object.assign(COURSE_OVERVIEWS, {
         'Clear pathway into Debate / MUN / Leadership tracks'
       ] },
       { h: 'Programme Overview', table: { head: ['Category', 'Details'], rows: [
-        ['Programme Name', 'Debating & MUN Excellence Programme'],
+        ['Programme Name', 'Debating and MUN Excellence Programme'],
         ['Target Students', 'Year 7 – Year 9'],
         ['Schedule', 'Wednesday 4:00–5:30 pm'],
         ['Class Format', 'Small group (8 students)'],

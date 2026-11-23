@@ -3,7 +3,7 @@
  * 另含：一对一课程定制专题页内容（CUSTOM_PAGE）
  * ========================================================= */
 
-const DEBATE_MUN_NAME = { zh: "辩论与模拟联合国卓越课程", en: "Debating & MUN Excellence Programme", th: "หลักสูตรโต้วาทีและสหประชาชาติจำลองสู่ความเป็นเลิศ" };
+const DEBATE_MUN_NAME = { zh: "辩论与模拟联合国卓越课程", en: "Debating and MUN Excellence Programme", th: "หลักสูตรโต้วาทีและสหประชาชาติจำลองสู่ความเป็นเลิศ" };
 const DEBATE_MUN_SUMMARY = { zh: "在模拟联合国中研究国际议题、代表国家发言并参与谈判。", en: "Research global issues, speak as a country delegate and negotiate in MUN simulations.", th: "ศึกษาประเด็นระดับโลก กล่าวสุนทรพจน์ในฐานะผู้แทนประเทศ และเจรจาในการประชุม MUN จำลอง" };
 const DEBATE_MUN_DESC = { zh: "通过模拟联合国会议，学生代表不同国家研究国际议题，比较各方立场并协商决议。Mr John 有超过 30 年的模拟联合国带队经验，将指导学生发言、回应质询、组建联盟并提出可行方案。", en: "Students represent countries in Model United Nations, research global issues and negotiate resolutions. Mr John draws on over 30 years of leading MUN to coach students in public speaking, responding to opposing views, building alliances and proposing workable solutions.", th: "นักเรียนสวมบทบาทผู้แทนประเทศในสหประชาชาติจำลอง ศึกษาปัญหาระดับโลกและเจรจาร่างข้อมติ Mr John มีประสบการณ์นำกิจกรรม MUN มากกว่า 30 ปี และจะสอนการกล่าวสุนทรพจน์ การตอบข้อโต้แย้ง การสร้างพันธมิตร และการเสนอทางออก" };
 const DEBATE_MUN_OUTCOMES = {
@@ -16,7 +16,7 @@ COURSES.push(
   /* ============ 演讲辩论与 MUN ============ */
   {
     id: 'debate-intro', cat: 'speaking', subject: 'speaking',
-    cover: 'assets/img/covers/debate-intro.jpg',
+    cover: 'assets/img/class/debate-presentation.jpg',
     name: DEBATE_MUN_NAME,
     grades: 'Y4–Y6', gmin: 4, gmax: 6,
     organizer: { zh: 'All A\u0027s 校内课程', en: 'Lanna All A\u0027s', th: 'หลักสูตรภายใน All A\u0027s' },
@@ -30,6 +30,7 @@ COURSES.push(
     mentor: 'Mr John',
     price: 13600,
     imgs: [
+      'assets/img/class/debate-mentoring.jpg', 'assets/img/class/debate-presentation.jpg',
       'assets/img/covers/speaking-class.jpg',
       'assets/img/class/speak-c1.jpg',
       'assets/img/class/speak-c2.jpg',
@@ -46,7 +47,7 @@ COURSES.push(
   },
   {
     id: 'debate-comp', cat: 'speaking', subject: 'speaking',
-    cover: 'assets/img/covers/debate-comp.jpg',
+    cover: 'assets/img/class/debate-mentoring.jpg',
     name: DEBATE_MUN_NAME,
     grades: 'Y7–Y9', gmin: 7, gmax: 9,
     organizer: { zh: 'All A\u0027s 校内课程', en: 'Lanna All A\u0027s', th: 'หลักสูตรภายใน All A\u0027s' },
@@ -60,6 +61,7 @@ COURSES.push(
     mentor: 'Mr John',
     price: 19200,
     imgs: [
+      'assets/img/class/debate-mentoring.jpg', 'assets/img/class/debate-presentation.jpg',
       'assets/img/covers/speaking-class.jpg',
       'assets/img/class/speak-c1.jpg',
       'assets/img/class/speak-c2.jpg',
@@ -76,6 +78,7 @@ COURSES.push(
   },
   {
     id: 'mun-intro', cat: 'speaking', subject: 'speaking',
+    registrationClosed: true,
     cover: 'assets/img/covers/mun-intro.jpg',
     name: { zh: 'MUN 入门（Introduction to MUN）-（2026 October camp）', en: 'Introduction to MUN -（2026 October camp）', th: 'MUN เบื้องต้น -（2026 October camp）' },
     grades: 'Y7–Y13', gmin: 7, gmax: 13,
@@ -101,6 +104,7 @@ COURSES.push(
   },
   {
     id: 'mun-comp', cat: 'speaking', subject: 'speaking',
+    registrationClosed: true,
     cover: 'assets/img/class/debate-mun1.jpg',
     name: { zh: '竞技 MUN（Competitive MUN）-（2026 October Camp）', en: 'Competitive MUN - (2026 October Camp)', th: 'MUN แข่งขัน - (ค่ายตุลาคม 2026)' },
     grades: 'Y4–Y9', gmin: 4, gmax: 9,

@@ -116,14 +116,14 @@ COURSES.push(
   },
   {
     id: 'imc', cat: 'competition', subject: 'math',
-    cover: 'assets/img/covers/imc-cover.jpg',
+    cover: 'assets/logos/ukmt-logo.png', fullCover: true,
     imgs: [, 
       'assets/img/class/math-c1.jpg', 'assets/img/class/math-c2.jpg', 'assets/img/class/math-c3.jpg',
       'assets/img/class/math-c4.jpg', 'assets/img/class/math-c5.jpg', 'assets/img/class/math-c6.jpg'
     ],
-    name: { zh: '国际数学竞赛（IMC）', en: 'International Mathematics Competition (IMC)', th: 'การแข่งขันคณิตศาสตร์นานาชาติ (IMC)' },
+    name: { zh: '英国中级／高级数学挑战赛（IMC/SMC）', en: 'Intermediate/Senior Mathematics Challenge (IMC/SMC)', th: 'การแข่งขันคณิตศาสตร์ระดับกลาง/ระดับสูง (IMC/SMC)' },
     grades: 'Y9–Y11', gmin: 9, gmax: 11,
-    organizer: { zh: 'IMC 组委会 · 国际', en: 'IMC organising committee · International', th: 'คณะกรรมการ IMC · นานาชาติ' },
+    organizer: { zh: '英国数学基金会（UKMT）', en: 'United Kingdom Mathematics Trust (UKMT)', th: 'United Kingdom Mathematics Trust (UKMT)' },
     format: { zh: '小班竞赛培训', en: 'Competition training class', th: 'ชั้นเรียนฝึกซ้อมการแข่งขัน' },
     startMonth: '2026-09',
     start: { zh: '2026年9月5日 – 12月5日（15周）', en: '5 Sep – 5 Dec 2026 (15 weeks)', th: '5 ก.ย. – 5 ธ.ค. 2026 (15 สัปดาห์)' },
@@ -133,9 +133,9 @@ COURSES.push(
     mentor: 'Mr Suresh & other experienced tutor',
     price: 13500,
     summary: {
-      zh: '面向 Y9–Y11 的国际性数学竞赛，强调创新解题与国际交流，次年 1 月开赛。',
-      en: 'An international contest for Y9–Y11 emphasising innovative problem-solving; held in January.',
-      th: 'การแข่งขันนานาชาติสำหรับ Y9–Y11 เน้นการแก้ปัญหาอย่างสร้างสรรค์ จัดในเดือนมกราคม'
+      zh: '通过英国数学基金会中级及高级数学挑战赛题目，练习数学推理、创造性思考和解题。',
+      en: 'Practise mathematical reasoning and creative problem solving for the UKMT Intermediate and Senior Mathematics Challenges.',
+      th: 'ฝึกการให้เหตุผลและแก้โจทย์อย่างสร้างสรรค์สำหรับการแข่งขันคณิตศาสตร์ระดับกลางและระดับสูงของ UKMT'
     },
             desc: {
       zh: '主办方：英国数学基金会（United Kingdom Mathematics Trust, UKMT）\n\n推荐年龄 / 参赛资格\n推荐年龄：13–16 岁（Y9–Y11）\n官方资格：英国学制 9–11 年级。\n\n关于本竞赛\n中级数学挑战赛（IMC）通过富有挑战性的题目，培养数学推理、问题解决能力与创造性思维。\n\n竞赛形式\n• 25 道选择题\n• 60 分钟\n• 不允许使用计算器\n\n考察主题\n• 代数\n• 几何\n• 数论\n• 概率\n• 数列\n• 函数\n• 逻辑推理\n\n竞赛时间：每年 1 月下旬至 2 月初',
@@ -206,6 +206,7 @@ COURSES.push(
       { grade: "Y8", day: { zh: "周四 15:00–16:00", en: "Thursday 15:00–16:00", th: "พฤหัสบดี 15:00–16:00" }, weeks: { zh: "16 周", en: "16 weeks", th: "16 สัปดาห์" }, hours: "16", mentor: "Mr Ethan", fee: "14,400 THB", start: "2027-01-21", finish: "2027-05-27" }
     ],
     imgs: [
+      'assets/img/class/nsl-teamwork.jpg', 'assets/img/class/nsl-workshop.jpg', 'assets/img/class/nsl-classroom.jpg',
       'assets/img/covers/image15.jpeg', 'assets/img/covers/image16.jpeg', 'assets/img/covers/image17.jpeg',
       'assets/img/class/nsl-c1.jpg', 'assets/img/class/nsl-c2.jpg', 'assets/img/class/nsl-c4.jpg',
       'assets/img/covers/image10.jpeg', 'assets/img/covers/image11.jpeg',
@@ -232,7 +233,7 @@ COURSES.push(
   {
     id: 'jpc', cat: 'enrichment', subject: 'physics',
     searchTerms: 'JPC Junior Physics Challenge 少年物理挑战赛',
-    cover: 'assets/img/phys-1.jpg',
+    cover: 'assets/img/covers/physics-excellence.jpg',
     name: { zh: "物理卓越课程", en: "Physics Excellence Programme", th: "หลักสูตรฟิสิกส์สู่ความเป็นเลิศ" },
     grades: 'Y7–Y10', gmin: 7, gmax: 10,
     organizer: { zh: "BPhO · 英国", en: "BPhO · UK", th: "BPhO · สหราชอาณาจักร" },
@@ -244,12 +245,45 @@ COURSES.push(
     mentor: 'Mr Ethan',
     price: 15300,
     hours: { zh: "17 小时", en: "17 hours", th: "17 ชั่วโมง" },
-    imgs: ['assets/img/covers/image18.jpeg', 
+    imgs: [
+      'assets/img/class/physics-optics.jpg', 'assets/img/class/jpc-challenge.jpg', 'assets/img/class/physics-prism.jpg', 'assets/img/class/physics-tutorial.jpg',
+      'assets/img/covers/image18.jpeg',
       'assets/img/class/jpc-c1.jpg', 'assets/img/class/jpc-c2.jpg', 'assets/img/class/jpc-c3.jpg',
       'assets/img/class/jpc-c4.jpg', 'assets/img/class/jpc-c5.jpg', 'assets/img/class/jpc-c6.jpg'
     ],
     summary: { zh: "巩固物理概念、练习分析与解题，为 IGCSE 和 A-Level 学习做准备。", en: "Build a foundation for IGCSE and A-Level Physics through concept work and problem solving.", th: "ปูพื้นฐานฟิสิกส์สำหรับ IGCSE และ A-Level ผ่านการทำความเข้าใจแนวคิดและฝึกแก้โจทย์" },
-    desc: { zh: "从力与运动到波和电，学生学习用物理原理解释现象，并把推理应用于陌生问题。学有余力的学生可进一步准备 JPC、BPhO 和 Physics Bowl 等竞赛。", en: "Students apply core physics concepts to unfamiliar problems and develop analytical reasoning. Students ready for a further challenge can prepare for competitions including JPC, BPhO and Physics Bowl.", th: "นักเรียนฝึกใช้หลักฟิสิกส์วิเคราะห์และแก้ปัญหาใหม่ ๆ ผู้ที่พร้อมสามารถฝึกเพิ่มเติมเพื่อเข้าร่วม JPC, BPhO และ Physics Bowl" },
+    desc: {
+      zh: `物理卓越课程（Y7–Y10）
+🎯 课程目标
+帮助学生深入理解物理，提高学业表现，发展分析思维和解题能力，为 IGCSE 和 A-Level 物理打下扎实基础。学有余力的学生还将接受进阶竞赛训练，并获鼓励参加合适的国内外物理竞赛。
+📚 学习成果
+• 提高学习成绩，加深对物理核心概念的理解。
+• 更有信心地处理挑战性物理问题。
+• 提升分析和解决问题的能力。
+• 为 IGCSE 和 A-Level 物理打下扎实基础。
+• 学有余力的学生可掌握进阶竞赛技巧。
+• 有机会备战国内外竞赛，包括 JPC、BPhO 和 Physics Bowl。`,
+      en: `Physics Excellence Programme (Years 7–10)
+🎯 Programme Aim:
+The Physics Excellence Programme aims to strengthen students' understanding of Physics, improve academic performance and develop analytical thinking and problem-solving skills, building a solid foundation for IGCSE and A-Level Physics. High-achieving students will also receive advanced competition training and be encouraged to participate in suitable national and international Physics competitions.
+📚 Learning Outcomes:
+• Improved academic performance and stronger understanding of core Physics concepts.
+• Greater confidence in tackling challenging Physics questions.
+• Enhanced analytical thinking and problem-solving skills.
+• A solid foundation for IGCSE and A-Level Physics.
+• Advanced competition skills and techniques for high-achieving students.
+• Opportunities to prepare for national and international competitions, including the JPC, BPhO and Physics Bowl.`,
+      th: `หลักสูตรฟิสิกส์สู่ความเป็นเลิศ (Y7–Y10)
+🎯 เป้าหมายของหลักสูตร
+เสริมความเข้าใจฟิสิกส์ ยกระดับผลการเรียน และพัฒนาการคิดวิเคราะห์และแก้โจทย์ เพื่อสร้างพื้นฐานที่มั่นคงสำหรับ IGCSE และ A-Level ผู้ที่มีผลการเรียนดีจะได้รับการฝึกแข่งขันขั้นสูงและการสนับสนุนให้เข้าร่วมการแข่งขันฟิสิกส์ในประเทศและต่างประเทศที่เหมาะสม
+📚 ผลการเรียนรู้
+• ผลการเรียนดีขึ้นและเข้าใจแนวคิดหลักทางฟิสิกส์ลึกซึ้งขึ้น
+• มั่นใจในการรับมือโจทย์ฟิสิกส์ที่ท้าทาย
+• วิเคราะห์และแก้ปัญหาได้ดีขึ้น
+• มีพื้นฐานสำหรับฟิสิกส์ระดับ IGCSE และ A-Level
+• ผู้เรียนที่มีผลการเรียนดีพัฒนาทักษะและเทคนิคการแข่งขันขั้นสูง
+• มีโอกาสเตรียมตัวสำหรับการแข่งขัน เช่น JPC, BPhO และ Physics Bowl`
+    },
 
   },
 
