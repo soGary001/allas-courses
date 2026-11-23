@@ -18,7 +18,7 @@
   };
 
   function T(key) { return (I18N[state.lang] && I18N[state.lang][key]) || I18N.zh[key] || key; }
-  function L(obj) { if (!obj) return ''; return obj[state.lang] || obj.zh || obj.en || ''; }
+  function L(obj) { if (typeof obj === 'string') return obj; if (!obj) return ''; return obj[state.lang] || obj.zh || obj.en || ''; }
   function gradeText(c) {
     // grades 兼容三语对象与纯字符串
     return (c.grades && typeof c.grades === 'object') ? L(c.grades) : c.grades;
@@ -73,13 +73,14 @@
       var fr = L(c.feeRange).replace(/[ ]*THB[ ]*$/i, '').replace(/[ ]*฿[ ]*$/, '');
       return '<span class="price-num price-range">' + esc(fr) + '</span> <span class="price-unit">' + T('thb') + '</span>';
     }
+    if (c.feeEnquiry) return '<span class="chip chip-tbd">' + T('feeEnquiry') + '</span>';
     if (c.price == null) return '<span class="chip chip-tbd">' + T('tbd') + '</span>';
     return '<span class="price-num">' + fmtPrice(c.price) + '</span> <span class="price-unit">' + T('thb') + '</span>';
   }
   function startText(c) {
     if (c.startMonth === 'rolling') return T('timeRolling');
     if (!c.startMonth) return null;
-    var map = { '2026-08': 'timeAug', '2026-09': 'timeSep', '2026-10': 'timeOct', '2027-01': 'timeJan' };
+    var map = { '2026-08': 'timeAug', '2026-09': 'timeSep', '2026-10': 'timeOct', '2026-12': 'timeDec', 'term2': 'timeTerm2', '2027-01': 'timeJan' };
     return T(map[c.startMonth] || 'timeTbd');
   }
 
@@ -115,7 +116,7 @@
     if (state.q) {
       var q = state.q.toLowerCase();
       var hay = [L(c.name), c.name.zh, c.name.en, c.name.th, L(SUBJECTS[c.subject].name),
-        c.organizer ? L(c.organizer) : '', c.mentor || ''].join(' ').toLowerCase();
+        c.organizer ? L(c.organizer) : '', c.mentor || '', c.searchTerms || ''].join(' ').toLowerCase();
       if (hay.indexOf(q) === -1) return false;
     }
     return true;
@@ -147,7 +148,7 @@
 
     var timeOpts = [
       ['all', T('fAll')], ['2026-08', T('timeAug')], ['2026-09', T('timeSep')],
-      ['2026-10', T('timeOct')], ['2027-01', T('timeJan')], ['rolling', T('timeRolling')], ['tbd', T('timeTbd')]
+      ['2026-10', T('timeOct')], ['2026-12', T('timeDec')], ['2027-01', T('timeJan')], ['term2', T('timeTerm2')], ['rolling', T('timeRolling')], ['tbd', T('timeTbd')]
     ].map(function (o) { return '<option value="' + o[0] + '"' + (state.time === o[0] ? ' selected' : '') + '>' + o[1] + '</option>'; }).join('');
     document.getElementById('selTime').innerHTML = timeOpts;
 
@@ -172,6 +173,7 @@
       ? '<span class="meta-item">🗓 ' + esc(st) + '</span>'
       : '<span class="meta-item meta-tbd">🗓 ' + T('tbd') + '</span>';
     var soonBadge = c.comingSoon ? '<span class="badge-soon">' + T('comingSoon') + '</span>' : '';
+    if (c.registrationClosed) soonBadge = '<span class="badge-soon">' + T('signupClosed') + '</span>';
     var footHtml = c.comingSoon
       ? '<div class="card-foot card-foot-soon"><span class="coming-soon-tag">⏳ ' + T('comingSoon') + '</span></div>'
       : '<div class="card-foot">' +
@@ -260,14 +262,29 @@
     }).join('');
   }
 
+  function setSignup(course) {
+    var closed = course && course.registrationClosed;
+    var emails = course && course.enquiryEmails;
+    var button = document.getElementById('barSignupBtn');
+    button.disabled = Boolean(closed);
+    document.getElementById('barSignup').textContent = T(closed ? 'signupClosed' : emails ? 'signupEnquiry' : 'barSignup');
+    document.getElementById('barSignupNote').textContent = closed ? '' : T(emails ? 'signupEmailNote' : 'barSignupNote');
+    state.signupUrl = '';
+    if (closed) return;
+    if (emails) {
+      state.signupUrl = 'mailto:' + emails.join(',') + '?subject=' + encodeURIComponent(L(course.name));
+    } else {
+      state.signupUrl = (course && FORM_URLS[course.id]) || CONFIG.googleFormUrl;
+    }
+  }
+
   function renderDetail(id) {
     var c = null;
     for (var i = 0; i < COURSES.length; i++) if (COURSES[i].id === id) { c = COURSES[i]; break; }
     if (!c) { location.hash = '#/'; return; }
     if (c.comingSoon) { location.hash = '#/'; return; }
 
-    // 记录当前课程的专属报名链接（无专属链接则回退默认表单）
-    state.signupUrl = (typeof FORM_URLS !== 'undefined' && FORM_URLS[id]) || CONFIG.googleFormUrl;
+    setSignup(c);
 
     var gallery = '';
     if (c.imgs && c.imgs.length) {
@@ -287,13 +304,20 @@
     if (c.duration) facts += factRow(T('factDuration'), L(c.duration));
     if (c.hours) facts += factRow(T('factHours'), L(c.hours));
     if (c.schedule) facts += factRow(T('factSchedule'), L(c.schedule));
+    if (c.classDates) facts += factRow(T('classDates'), c.classDates);
+    if (c.competitionDate) facts += factRow(T('competitionDate'), L(c.competitionDate));
+    if (c.examDate) facts += factRow(T('examDate'), L(c.examDate));
     if (c.mentor) facts += factRow(T('factMentor'), c.mentor);
     if (c.curriculum) facts += factRow(T('factCurriculum'), c.curriculum);
     if (c.price != null || c.feeRange) {
       var feeVal = c.feeRange ? L(c.feeRange) : (fmtPrice(c.price) + ' ' + T('thb'));
       facts += factRow(T('factFee'), feeVal);
+    } else if (c.feeEnquiry) {
+      facts += factRow(T('factFee'), T('feeEnquiry'));
     } else facts += factRowTbd(T('factFee'));
-    facts += factRow(T('factBooking'), CONFIG.email, true);
+    (c.enquiryEmails || [CONFIG.email]).forEach(function (email) {
+      facts += factRow(T('factBooking'), email, true);
+    });
 
     var gradeTable = '';
     if (c.gradeRows && c.gradeRows.length) {
@@ -318,8 +342,8 @@
           c.gradeRows.map(function (r) {
             return '<tr>' +
               '<td class="grade-cell">' + esc(r.grade) + '</td>' +
-              '<td>' + esc(r.day) + '</td>' +
-              '<td>' + fmtWeeks(r.weeks) + '</td>' +
+              '<td>' + esc(L(r.day)) + '</td>' +
+              '<td>' + fmtWeeks(L(r.weeks)) + '</td>' +
               '<td>' + esc(r.hours) + '</td>' +
               '<td>' + esc(r.mentor) + '</td>' +
               '<td>' + esc(r.fee) + '</td>' +
@@ -416,6 +440,7 @@
       return html;
     }
     var descParas = parseDesc(L(c.desc));
+    if (c.guideUrl) descParas += '<p><a href="' + esc(c.guideUrl) + '" target="_blank" rel="noopener noreferrer">' + T('courseGuide') + '</a></p>';
     var introSec = (descParas || noteSec)
       ? ('<section class="detail-sec ov-sec"><h2>' + (c.introTitle ? esc(L(c.introTitle)) : (c.cat === 'competition' ? T('dIntroComp') : T('dIntro'))) + '</h2>' + descParas + noteSec + '</section>')
       : '';
@@ -432,7 +457,7 @@
               '<span class="chip chip-green">' + (SUBJECTS[c.subject].icon) + ' ' + esc(L(SUBJECTS[c.subject].name)) + '</span>' +
               '<span class="chip chip-green">🎓 ' + esc(gradeText(c)) + '</span>' +
               '<span class="chip ' + (c.price == null ? 'chip-tbd' : 'chip-wheat') + '">' +
-                (c.price != null ? fmtPrice(c.price) + ' ' + T('thb') : T('tbd')) + '</span>' +
+                (c.feeRange ? esc(L(c.feeRange)) : c.price != null ? fmtPrice(c.price) + ' ' + T('thb') : T(c.feeEnquiry ? 'feeEnquiry' : 'tbd')) + '</span>' +
             '</div>' +
           '</div>' +
         '</div>' +
@@ -572,7 +597,7 @@
     } else if (h === '#/custom') {
       customPage.classList.remove('hidden');
       bar.classList.remove('hidden');
-      state.signupUrl = CONFIG.googleFormUrl;   // 定制页无专属表单，用默认
+      setSignup(null);
       renderCustom();
     } else {
       bar.classList.add('hidden');
@@ -618,7 +643,9 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeContactModal(); });
 
     document.getElementById('barSignupBtn').addEventListener('click', function () {
-      window.open(state.signupUrl || CONFIG.googleFormUrl, '_blank');
+      if (!state.signupUrl) return;
+      if (state.signupUrl.indexOf('mailto:') === 0) window.location.href = state.signupUrl;
+      else window.open(state.signupUrl, '_blank', 'noopener');
     });
 
     window.addEventListener('hashchange', route);

@@ -186,23 +186,24 @@ COURSES.push(
   /* ============ 科学竞赛 ============ */
   {
     id: 'nsl', cat: 'competition', subject: 'science',
+    competitionDate: { zh: "2027年4月初赛，6月决赛", en: "April 2027 preliminary round, June 2027 final", th: "รอบคัดเลือก เม.ย. 2027 รอบชิงชนะเลิศ มิ.ย. 2027" },
     cover: 'assets/logos/nsl.jpg',
     name: { zh: '美国国家科学联盟（NSL）', en: 'National Science League (NSL)', th: 'National Science League (NSL)' },
     grades: 'Y2–Y8', gmin: 2, gmax: 8,
     organizer: { zh: 'National Science League · 美国', en: 'National Science League · USA', th: 'National Science League · สหรัฐอเมริกา' },
     format: { zh: '小班竞赛培训（按年级分班）', en: 'Competition training (grade-level classes)', th: 'ชั้นเรียนฝึกซ้อมแยกตามระดับชั้น' },
-    startMonth: '2026-08',
-    start: { zh: '2026年8月中下旬开课（15周，各年级不同）', en: 'From mid/late Aug 2026 (15 weeks, by grade)', th: 'เริ่มกลาง/ปลาย ส.ค. 2026 (15 สัปดาห์ ตามระดับชั้น)' },
-    duration: { zh: '15 周', en: '15 weeks', th: '15 สัปดาห์' },
-    hours: { zh: '15–30 小时（视年级）', en: '15–30 hours (by grade)', th: '15–30 ชั่วโมง (ตามระดับชั้น)' },
+    startMonth: '2027-01',
+    start: { zh: "2027年1月16–21日开班，5月24–29日结课（按年级）", en: "Classes start 16–21 January and finish 24–29 May 2027, by grade", th: "เริ่ม 16–21 ม.ค. และสิ้นสุด 24–29 พ.ค. 2027 ตามระดับชั้น" },
+    duration: { zh: "15–16 周", en: "15–16 weeks", th: "15–16 สัปดาห์" },
+    hours: { zh: 'Y2–Y3：21 小时；Y4–Y5：30 小时；Y6–Y7：15 小时；Y8：16 小时', en: 'Y2–Y3: 21 hours · Y4–Y5: 30 hours · Y6–Y7: 15 hours · Y8: 16 hours', th: 'Y2–Y3: 21 ชั่วโมง · Y4–Y5: 30 ชั่วโมง · Y6–Y7: 15 ชั่วโมง · Y8: 16 ชั่วโมง' },
     schedule: { zh: '各年级上课时段见下表', en: 'Grade-level schedule below', th: 'ตามตารางระดับชั้นด้านล่าง' },
     price: 13500,
     feeRange: { zh: '13,500–27,000 THB', en: '13,500–27,000 THB', th: '13,500–27,000 THB' },
     gradeRows: [
-      { grade: 'Y2–Y3', day: 'Monday 3:30–5:00 pm', weeks: '14 weeks', hours: '21 hrs', mentor: 'Ms Roz', fee: '18,900 THB', start: '24 Aug 2026', finish: '14 Dec 2026' },
-      { grade: 'Y4–Y5', day: 'Saturday 2:00–4:00 pm', weeks: '15 weeks (no class on 17 Oct)', hours: '30 hrs', mentor: 'Ms Roz', fee: '27,000 THB', start: '29 Aug 2026', finish: '11 Dec 2026' },
-      { grade: 'Y6–Y7', day: 'Tuesday 3:00–4:00 pm', weeks: '15 weeks', hours: '15 hrs', mentor: 'Ms Marta', fee: '13,500 THB', start: '25 Aug 2026', finish: '8 Dec 2026' },
-      { grade: 'Y8', day: 'Thursday 3:00–4:00 pm', weeks: '15 weeks', hours: '15 hrs', mentor: 'Mr Dan', fee: '13,500 THB', start: '27 Aug 2026', finish: '10 Dec 2026' }
+      { grade: "Y2–Y3", day: { zh: "周一 15:30–17:00", en: "Monday 15:30–17:00", th: "จันทร์ 15:30–17:00" }, weeks: { zh: "16 周（1月18、25日；2月1、8、15日；3月1、8、15、22、29日；4月19、26日；5月3、10、17、24日）", en: "16 weeks (Jan 18/25, Feb 1/8/15, Mar 1/8/15/22/29, Apr 19/26, May 3/10/17/24)", th: "16 สัปดาห์ (ม.ค. 18/25, ก.พ. 1/8/15, มี.ค. 1/8/15/22/29, เม.ย. 19/26, พ.ค. 3/10/17/24)" }, hours: "21", mentor: "Ms Roz", fee: "18,900 THB", start: "2027-01-18", finish: "2027-05-24" },
+      { grade: "Y4–Y5", day: { zh: "周六 14:00–16:00", en: "Saturday 14:00–16:00", th: "เสาร์ 14:00–16:00" }, weeks: { zh: "15 周（2月20、27日及4月2、10、17日停课）", en: "15 weeks (No class Feb 20/27 or Apr 2/10/17)", th: "15 สัปดาห์ (งดเรียน 20/27 ก.พ. และ 2/10/17 เม.ย.)" }, hours: "30", mentor: "Ms Roz", fee: "27,000 THB", start: "2027-01-16", finish: "2027-05-29" },
+      { grade: "Y6–Y7", day: { zh: "周二 15:00–16:00", en: "Tuesday 15:00–16:00", th: "อังคาร 15:00–16:00" }, weeks: { zh: "15 周", en: "15 weeks", th: "15 สัปดาห์" }, hours: "15", mentor: "Ms Marta", fee: "13,500 THB", start: "2027-01-19", finish: "2027-05-25" },
+      { grade: "Y8", day: { zh: "周四 15:00–16:00", en: "Thursday 15:00–16:00", th: "พฤหัสบดี 15:00–16:00" }, weeks: { zh: "16 周", en: "16 weeks", th: "16 สัปดาห์" }, hours: "16", mentor: "Mr Ethan", fee: "14,400 THB", start: "2027-01-21", finish: "2027-05-27" }
     ],
     imgs: [
       'assets/img/covers/image15.jpeg', 'assets/img/covers/image16.jpeg', 'assets/img/covers/image17.jpeg',
@@ -211,7 +212,7 @@ COURSES.push(
       'assets/img/class/nsl-c3.jpg', 'assets/img/class/nsl-c5.jpg', 'assets/img/class/nsl-c6.jpg'
     ],
     summary: {
-      zh: '基于美国课标的科学竞赛，Y2–Y8 分龄参赛，初赛次年 4 月、决赛 6 月。',
+      zh: '基于美国课标的科学竞赛，Y2–Y8 分龄参赛，2027 年 4 月初赛、6 月决赛。',
       en: 'A US-standards-based science contest for Y2–Y8; preliminary round in April, final in June.',
       th: 'การแข่งขันวิทยาศาสตร์ตามมาตรฐานสหรัฐอเมริกาสำหรับ Y2–Y8 รอบคัดเลือกเดือนเมษายน รอบชิงชนะเลิศเดือนมิถุนายน'
     },
@@ -229,42 +230,33 @@ COURSES.push(
 
   /* ============ 物理竞赛 ============ */
   {
-    id: 'jpc', cat: 'competition', subject: 'physics',
-    cover: 'assets/logos/jpc.jpg',
-    name: { zh: '英国少年物理挑战赛（JPC）', en: 'Junior Physics Challenge (JPC)', th: 'การท้าทายฟิสิกส์ระดับเยาวชน (JPC)' },
-    grades: 'Y8–Y10', gmin: 8, gmax: 10,
-    organizer: { zh: '牛津大学 · 英国', en: 'University of Oxford · UK', th: 'มหาวิทยาลัยออกซฟอร์ด · สหราชอาณาจักร' },
-    format: { zh: '小班竞赛培训', en: 'Competition training class', th: 'ชั้นเรียนฝึกซ้อมการแข่งขัน' },
-    startMonth: '2026-09',
-    start: { zh: '2026年9月 – 11月', en: 'September – November 2026', th: 'กันยายน – พฤศจิกายน 2026' },
-    duration: { zh: '约 10 周', en: 'Approx. 10 weeks', th: 'ประมาณ 10 สัปดาห์' },
-    schedule: { zh: '每周二 15:00–16:00', en: 'Tuesday 3:00–4:00 pm', th: 'วันอังคาร 15:00–16:00' },
-    mentor: 'Mr Dan',
-    price: 10800,
+    id: 'jpc', cat: 'enrichment', subject: 'physics',
+    searchTerms: 'JPC Junior Physics Challenge 少年物理挑战赛',
+    cover: 'assets/img/phys-1.jpg',
+    name: { zh: "物理卓越课程", en: "Physics Excellence Programme", th: "หลักสูตรฟิสิกส์สู่ความเป็นเลิศ" },
+    grades: 'Y7–Y10', gmin: 7, gmax: 10,
+    organizer: { zh: "BPhO · 英国", en: "BPhO · UK", th: "BPhO · สหราชอาณาจักร" },
+    format: { zh: "小班课程", en: "Small-group class", th: "ชั้นเรียนกลุ่มเล็ก" },
+    startMonth: '2027-01',
+    start: { zh: "2027年1月至6月2日", en: "January to 2 June 2027", th: "มกราคม ถึง 2 มิถุนายน 2027" },
+
+    schedule: { zh: "周三 16:00–17:00", en: "Wednesday 16:00–17:00", th: "พุธ 16:00–17:00" },
+    mentor: 'Mr Ethan',
+    price: 15300,
+    hours: { zh: "17 小时", en: "17 hours", th: "17 ชั่วโมง" },
     imgs: ['assets/img/covers/image18.jpeg', 
       'assets/img/class/jpc-c1.jpg', 'assets/img/class/jpc-c2.jpg', 'assets/img/class/jpc-c3.jpg',
       'assets/img/class/jpc-c4.jpg', 'assets/img/class/jpc-c5.jpg', 'assets/img/class/jpc-c6.jpg'
     ],
-    summary: {
-      zh: '牛津大学主办的少年物理挑战赛，鼓励用物理原理解释日常现象，2026 年 11 月开赛。',
-      en: 'An Oxford-run challenge encouraging students to explain everyday phenomena with physics; held in November 2026.',
-      th: 'การท้าทายโดยมหาวิทยาลัยออกซฟอร์ด ส่งเสริมให้อธิบายปรากฏการณ์ในชีวิตประจำวันด้วยฟิสิกส์ จัดในเดือนพฤศจิกายน 2026'
-    },
-            desc: {
-      zh: '课程目标：JPC 课程旨在培养强大的思维能力并支持物理学科表现，为 IGCSE 和 A-Level 学习打下坚实基础，同时为有兴趣的学生备战 2026 年 11 月的英国少年物理挑战赛（JPC）。\n学习收获：加深对物理核心概念的理解；增强应对难题的信心；为更高级别的物理竞赛做好准备；为 IGCSE / A-Level 物理打下坚实基础；为 BPhO、Physics Bowl 等更高级别竞赛做好准备。\n典型竞赛时间：通常每年 11 月举行。',
-      en: 'Programme Aim: The JPC programme develops strong thinking skills and supports academic performance in Physics, building a solid foundation for IGCSE and A-Level studies. It also prepares interested students for the Junior Physics Challenge (JPC).\nLearning Outcomes: Stronger understanding of core Physics concepts; Increased confidence in tackling challenging questions; Preparation for higher-level physics competitions; Solid foundation for IGCSE / A-Level Physics; Preparation for higher-level competitions such as the BPhO and Physics Bowl.\nTypical Competition Date: usually held in November each year.',
-      th: 'เป้าหมายโปรแกรม: โปรแกรม JPC พัฒนาทักษะการคิดที่แข็งแกร่งและสนับสนุนผลการเรียนวิชาฟิสิกส์ สร้างพื้นฐานที่มั่นคงสำหรับ IGCSE และ A-Level พร้อมเตรียมนักเรียนที่สนใจสำหรับการแข่งขัน Junior Physics Challenge (JPC)\nผลการเรียนรู้: เข้าใจแนวคิดหลักของฟิสิกส์ได้ลึกซึ้งยิ่งขึ้น; เพิ่มความมั่นใจในการแก้โจทย์ท้าทาย; เตรียมพร้อมสำหรับการแข่งขันฟิสิกส์ระดับสูง; พื้นฐานที่มั่นคงสำหรับฟิสิกส์ IGCSE / A-Level; เตรียมพร้อมสำหรับการแข่งขันระดับสูง เช่น BPhO และ Physics Bowl\nวันแข่งขันโดยทั่วไป: จัดขึ้นในเดือนพฤศจิกายนของทุกปี'
-    },
-    outcomes: {
-      zh: ['动手实验理解物理概念', '掌握 JPC 竞赛题型', '牛津大学主办赛事背书'],
-      en: ['Concept understanding through hands-on experiments', 'Mastery of JPC problem types', 'A University of Oxford-run competition credential'],
-      th: ['เข้าใจแนวคิดผ่านการทดลองจริง', 'เชี่ยวชาญแบบโจทย์ JPC', 'การแข่งขันโดยมหาวิทยาลัยออกซฟอร์ด']
-    }
+    summary: { zh: "巩固物理概念、练习分析与解题，为 IGCSE 和 A-Level 学习做准备。", en: "Build a foundation for IGCSE and A-Level Physics through concept work and problem solving.", th: "ปูพื้นฐานฟิสิกส์สำหรับ IGCSE และ A-Level ผ่านการทำความเข้าใจแนวคิดและฝึกแก้โจทย์" },
+    desc: { zh: "从力与运动到波和电，学生学习用物理原理解释现象，并把推理应用于陌生问题。学有余力的学生可进一步准备 JPC、BPhO 和 Physics Bowl 等竞赛。", en: "Students apply core physics concepts to unfamiliar problems and develop analytical reasoning. Students ready for a further challenge can prepare for competitions including JPC, BPhO and Physics Bowl.", th: "นักเรียนฝึกใช้หลักฟิสิกส์วิเคราะห์และแก้ปัญหาใหม่ ๆ ผู้ที่พร้อมสามารถฝึกเพิ่มเติมเพื่อเข้าร่วม JPC, BPhO และ Physics Bowl" },
+
   },
 
   /* ============ 化学竞赛 ============ */
   {
     id: 'c3l6', cat: 'competition', subject: 'chemistry',
+    registrationClosed: true,
     cover: 'assets/logos/c3l6.jpg',
     name: { zh: '剑桥化学挑战赛（C3L6）', en: 'Cambridge Chemistry Challenge (C3L6)', th: 'การท้าทายเคมีเคมบริดจ์ (C3L6)' },
     grades: 'Y11–Y13', gmin: 11, gmax: 13,
@@ -299,6 +291,7 @@ COURSES.push(
   },
   {
     id: 'icq', cat: 'competition', subject: 'chemistry',
+    registrationClosed: true,
     cover: 'assets/logos/icq.jpg',
     name: { zh: '国际化学知识竞赛（ICQ）', en: 'International Chemistry Quiz (ICQ)', th: 'แบบทดสอบเคมีนานาชาติ (ICQ)' },
     grades: 'Y9–Y11', gmin: 9, gmax: 11,

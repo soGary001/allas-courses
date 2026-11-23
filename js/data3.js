@@ -3,22 +3,32 @@
  * 另含：一对一课程定制专题页内容（CUSTOM_PAGE）
  * ========================================================= */
 
+const DEBATE_MUN_NAME = { zh: "辩论与模拟联合国卓越课程", en: "Debating & MUN Excellence Programme", th: "หลักสูตรโต้วาทีและสหประชาชาติจำลองสู่ความเป็นเลิศ" };
+const DEBATE_MUN_SUMMARY = { zh: "在模拟联合国中研究国际议题、代表国家发言并参与谈判。", en: "Research global issues, speak as a country delegate and negotiate in MUN simulations.", th: "ศึกษาประเด็นระดับโลก กล่าวสุนทรพจน์ในฐานะผู้แทนประเทศ และเจรจาในการประชุม MUN จำลอง" };
+const DEBATE_MUN_DESC = { zh: "通过模拟联合国会议，学生代表不同国家研究国际议题，比较各方立场并协商决议。Mr John 有超过 30 年的模拟联合国带队经验，将指导学生发言、回应质询、组建联盟并提出可行方案。", en: "Students represent countries in Model United Nations, research global issues and negotiate resolutions. Mr John draws on over 30 years of leading MUN to coach students in public speaking, responding to opposing views, building alliances and proposing workable solutions.", th: "นักเรียนสวมบทบาทผู้แทนประเทศในสหประชาชาติจำลอง ศึกษาปัญหาระดับโลกและเจรจาร่างข้อมติ Mr John มีประสบการณ์นำกิจกรรม MUN มากกว่า 30 ปี และจะสอนการกล่าวสุนทรพจน์ การตอบข้อโต้แย้ง การสร้างพันธมิตร และการเสนอทางออก" };
+const DEBATE_MUN_OUTCOMES = {
+  zh: ['就国际议题研究并阐述所代表国家的立场', '自信发言、提出问题并回应反方论点', '倾听、谈判、结盟并共同起草解决方案', '在模拟委员会中参与辩论、磋商与决策，为参加入门级 MUN 会议做好准备'],
+  en: ['Research a global issue and explain the position of the country you represent', 'Deliver a persuasive speech, ask questions and respond to opposing views', 'Negotiate, build alliances and contribute to a draft resolution', 'Practise committee debate, caucuses and decision-making in preparation for beginner MUN conferences'],
+  th: ['ค้นคว้าประเด็นโลกและอธิบายจุดยืนของประเทศที่เป็นตัวแทน', 'กล่าวสุนทรพจน์ ตั้งคำถาม และตอบข้อโต้แย้งอย่างมั่นใจ', 'ฝึกฟัง เจรจา สร้างพันธมิตร และร่วมร่างข้อมติ', 'ฝึกอภิปราย หารือ และตัดสินใจในคณะกรรมการจำลอง เพื่อเตรียมร่วมการประชุม MUN ระดับเริ่มต้น']
+};
+
 COURSES.push(
   /* ============ 演讲辩论与 MUN ============ */
   {
     id: 'debate-intro', cat: 'speaking', subject: 'speaking',
     cover: 'assets/img/covers/debate-intro.jpg',
-    name: { zh: '辩论入门（Introduction to Debating）', en: 'Introduction to Debating', th: 'การโต้วาทีเบื้องต้น' },
+    name: DEBATE_MUN_NAME,
     grades: 'Y4–Y6', gmin: 4, gmax: 6,
     organizer: { zh: 'All A\u0027s 校内课程', en: 'Lanna All A\u0027s', th: 'หลักสูตรภายใน All A\u0027s' },
     format: { zh: '小班课程', en: 'Small-group class', th: 'เรียนกลุ่มเล็ก' },
-    startMonth: '2026-08',
-    start: { zh: '2026年8月24日 – 12月14日（14周）', en: '24 Aug – 14 Dec 2026 (14 weeks)', th: '24 ส.ค. – 14 ธ.ค. 2026 (14 สัปดาห์)' },
-    duration: { zh: '14 周', en: '14 weeks', th: '14 สัปดาห์' },
-    hours: { zh: '14 小时', en: '14 hours', th: '14 ชั่วโมง' },
-    schedule: { zh: '每周一 15:20–16:20', en: 'Monday 3:20–4:20 pm', th: 'วันจันทร์ 15:20–16:20' },
+    startMonth: '2027-01',
+    start: { zh: "2027年1月11日至5月31日", en: "11 January – 31 May 2027", th: "11 ม.ค. – 31 พ.ค. 2027" },
+    duration: { zh: "17 周", en: "17 weeks", th: "17 สัปดาห์" },
+    hours: { zh: "17 小时", en: "17 hours", th: "17 ชั่วโมง" },
+    schedule: { zh: "周一 15:40–16:40", en: "Monday 15:40–16:40", th: "จันทร์ 15:40–16:40" },
+    classDates: "01/11, 01/25 · 02/01, 02/08, 02/15 · 03/01, 03/08, 03/15, 03/22, 03/29 · 04/19, 04/26 · 05/03, 05/10, 05/17, 05/24, 05/31",
     mentor: 'Mr John',
-    price: 11200,
+    price: 13600,
     imgs: [
       'assets/img/covers/speaking-class.jpg',
       'assets/img/class/speak-c1.jpg',
@@ -30,36 +40,25 @@ COURSES.push(
       'assets/img/class/debate-award1.jpg',
       'assets/img/class/debate-speech1.jpg'
     ],
-    summary: {
-      zh: '面向 Y4–Y6 的辩论启蒙课程，建立观点表达、倾听回应与逻辑组织的基础能力。',
-      en: 'A debating foundation course for Y4–Y6, building confident expression, active listening and logical organisation.',
-      th: 'คอร์สพื้นฐานการโต้วาทีสำหรับ Y4–Y6 สร้างการแสดงความคิดเห็นอย่างมั่นใจ การฟังและตอบโต้ และการจัดระเบียบตรรกะ'
-    },
-        desc: {
-      zh: '课程目标：建立公开演讲与展示的自信心；培养逻辑思维与结构化论证能力；引入辩论技巧与批判性推理；为公开演讲、辩论与 MUN 竞赛做好准备。学习收获：课程结束时，学生将能够：在观众面前自信、清晰地表达；呈现结构化的论点与观点；参与辩论与讨论；展现参加入门级竞赛的成熟度；为辩论 / MUN / 领导力方向铺就清晰路径。',
-      en: 'Course Objectives: Build confidence in public speaking and presentations; Develop logical thinking and structured argument skills; Introduce debate techniques and critical reasoning; Prepare students for Public Speaking, Debate, and MUN competitions. Learning Outcomes: By the end of the course, students will: Speak confidently and clearly in front of an audience; Present structured arguments and opinions; Participate in debates and discussions; Demonstrate readiness for entry-level competitions; Clear pathway into Debate / MUN / Leadership tracks.',
-      th: 'วัตถุประสงค์หลักสูตร: สร้างความมั่นใจในการพูดในที่สาธารณะและการนำเสนอ; พัฒนาการคิดเชิงตรรกะและทักษะการโต้แย้งอย่างมีโครงสร้าง; แนะนำเทคนิคการโต้วาทีและการใช้เหตุผลเชิงวิพากษ์; เตรียมนักเรียนสำหรับการแข่งขันพูดในที่สาธารณะ โต้วาที และ MUN ผลการเรียนรู้: เมื่อจบหลักสูตร นักเรียนจะสามารถ: พูดอย่างมั่นใจและชัดเจนต่อหน้าผู้ฟัง; นำเสนอข้อโต้แย้งและความคิดเห็นอย่างมีโครงสร้าง; เข้าร่วมการโต้วาทีและการอภิปราย; แสดงความพร้อมสำหรับการแข่งขันระดับเริ่มต้น; มีเส้นทางที่ชัดเจนสู่ทิศทางโต้วาที / MUN / ภาวะผู้นำ'
-    },
-    outcomes: {
-      zh: ['自信清晰的口头表达', '辩论技巧与批判性思维的入门', '为公开演讲、辩论与 MUN 竞赛做准备'],
-      en: ['Speak confidently and clearly in front of an audience', 'Build foundational debate techniques and critical reasoning', 'Prepare for Public Speaking, Debate and MUN competitions'],
-      th: ['พูดอย่างมั่นใจและชัดเจนต่อหน้าผู้ชม', 'สร้างพื้นฐานเทคนิคการโต้วาทีและการให้เหตุผลเชิงวิพากษ์', 'เตรียมพร้อมสำหรับการแข่งขันการพูดในที่สาธารณะ การโต้วาที และ MUN']
-    }
+    summary: DEBATE_MUN_SUMMARY,
+    desc: DEBATE_MUN_DESC,
+    outcomes: DEBATE_MUN_OUTCOMES
   },
   {
     id: 'debate-comp', cat: 'speaking', subject: 'speaking',
     cover: 'assets/img/covers/debate-comp.jpg',
-    name: { zh: '竞技辩论（Competitive Debating）', en: 'Competitive Debating', th: 'การโต้วาทีแข่งขัน' },
+    name: DEBATE_MUN_NAME,
     grades: 'Y7–Y9', gmin: 7, gmax: 9,
     organizer: { zh: 'All A\u0027s 校内课程', en: 'Lanna All A\u0027s', th: 'หลักสูตรภายใน All A\u0027s' },
     format: { zh: '小班课程', en: 'Small-group class', th: 'เรียนกลุ่มเล็ก' },
-    startMonth: '2026-08',
-    start: { zh: '2026年8月26日 – 12月9日（14周）', en: '26 Aug – 9 Dec 2026 (14 weeks)', th: '26 ส.ค. – 9 ธ.ค. 2026 (14 สัปดาห์)' },
-    duration: { zh: '14 周', en: '14 weeks', th: '14 สัปดาห์' },
-    hours: { zh: '21 小时', en: '21 hours', th: '21 ชั่วโมง' },
-    schedule: { zh: '每周三 16:00–17:30', en: 'Wednesday 4:00–5:30 pm', th: 'วันพุธ 16:00–17:30' },
+    startMonth: '2027-01',
+    start: { zh: "2027年1月13日至6月2日", en: "13 January – 2 June 2027", th: "13 ม.ค. – 2 มิ.ย. 2027" },
+    duration: { zh: "16 周", en: "16 weeks", th: "16 สัปดาห์" },
+    hours: { zh: "24 小时", en: "24 hours", th: "24 ชั่วโมง" },
+    schedule: { zh: "周三 16:00–17:30", en: "Wednesday 16:00–17:30", th: "พุธ 16:00–17:30" },
+    classDates: "01/13, 01/20 · 02/03, 02/10 · 03/03, 03/10, 03/17, 03/24, 03/31 · 04/21, 04/28 · 05/05, 05/12, 05/19, 05/26 · 06/02",
     mentor: 'Mr John',
-    price: 16800,
+    price: 19200,
     imgs: [
       'assets/img/covers/speaking-class.jpg',
       'assets/img/class/speak-c1.jpg',
@@ -71,21 +70,9 @@ COURSES.push(
       'assets/img/class/debate-award1.jpg',
       'assets/img/class/debate-speech1.jpg'
     ],
-    summary: {
-      zh: '面向 Y7–Y9 的竞技辩论课程，学习赛制规则、立论反驳与实战演练，面向正式比赛。',
-      en: 'A competitive debating course for Y7–Y9, aimed at novice public speakers aiming to join competitions and progress to formal tournaments.',
-      th: 'คอร์สโต้วาทีแข่งขันสำหรับ Y7–Y9 สำหรับผู้พูดในที่สาธารณะมือใหม่ที่มุ่งเข้าร่วมการแข่งขันและก้าวสู่ทัวร์นาเมนต์อย่างเป็นทางการ'
-    },
-        desc: {
-      zh: '课程目标：建立公开演讲与展示的自信心；培养逻辑思维与结构化论证能力；引入辩论技巧与批判性推理；为公开演讲、辩论与 MUN 竞赛做好准备。学习收获：课程结束时，学生将能够：在观众面前自信、清晰地表达；呈现结构化的论点与观点；参与辩论与讨论；展现参加入门级竞赛的成熟度；为辩论 / MUN / 领导力方向铺就清晰路径。',
-      en: 'Course Objectives: Build confidence in public speaking and presentations; Develop logical thinking and structured argument skills; Introduce debate techniques and critical reasoning; Prepare students for Public Speaking, Debate, and MUN competitions. Learning Outcomes: By the end of the course, students will: Speak confidently and clearly in front of an audience; Present structured arguments and opinions; Participate in debates and discussions; Demonstrate readiness for entry-level competitions; Clear pathway into Debate / MUN / Leadership tracks.',
-      th: 'วัตถุประสงค์หลักสูตร: สร้างความมั่นใจในการพูดในที่สาธารณะและการนำเสนอ; พัฒนาการคิดเชิงตรรกะและทักษะการโต้แย้งอย่างมีโครงสร้าง; แนะนำเทคนิคการโต้วาทีและการใช้เหตุผลเชิงวิพากษ์; เตรียมนักเรียนสำหรับการแข่งขันพูดในที่สาธารณะ โต้วาที และ MUN ผลการเรียนรู้: เมื่อจบหลักสูตร นักเรียนจะสามารถ: พูดอย่างมั่นใจและชัดเจนต่อหน้าผู้ฟัง; นำเสนอข้อโต้แย้งและความคิดเห็นอย่างมีโครงสร้าง; เข้าร่วมการโต้วาทีและการอภิปราย; แสดงความพร้อมสำหรับการแข่งขันระดับเริ่มต้น; มีเส้นทางที่ชัดเจนสู่ทิศทางโต้วาที / MUN / ภาวะผู้นำ'
-    },
-    outcomes: {
-      zh: ['清晰陈述论点与个人观点', '积极参与辩论与讨论', '为入门级竞赛做好充分准备', '清晰通往辩论 / MUN / 领导力赛道的进阶路径'],
-      en: ['Present structured arguments and opinions', 'Participate in debates and discussions', 'Demonstrate readiness for entry-level competitions', 'Clear pathway into Debate / MUN / Leadership track'],
-      th: ['นำเสนอข้อโต้แย้งและความคิดเห็นอย่างมีโครงสร้าง', 'มีส่วนร่วมในการโต้วาทีและการอภิปราย', 'แสดงความพร้อมสำหรับการแข่งขันระดับเริ่มต้น', 'เส้นทางที่ชัดเจนสู่การโต้วาที / MUN / ความเป็นผู้นำ']
-    }
+    summary: DEBATE_MUN_SUMMARY,
+    desc: DEBATE_MUN_DESC,
+    outcomes: DEBATE_MUN_OUTCOMES
   },
   {
     id: 'mun-intro', cat: 'speaking', subject: 'speaking',
@@ -144,16 +131,17 @@ COURSES.push(
   /* ============ 医学项目 ============ */
   {
     id: 'future-doctor', cat: 'medicine', subject: 'medicine',
+    examDate: { zh: "2027年5月（选考）", en: "May 2027 (optional exam)", th: "พฤษภาคม 2027 (สอบตามความสมัครใจ)" },
     cover: 'assets/img/covers/med-students.jpg',
     name: { zh: '未来医生计划（Future Doctor Programme）', en: 'Future Doctor Programme', th: 'โปรแกรมแพทย์อนาคต' },
     grades: 'Y9–Y12', gmin: 9, gmax: 12,
     format: { zh: '小班课程', en: 'Small-group class', th: 'เรียนกลุ่มเล็ก' },
-    startMonth: '2026-09',
-    start: { zh: '2026年9月第一周 – 12月（14周）', en: 'First week of Sep – Dec 2026 (14 weeks)', th: 'สัปดาห์แรกของ ก.ย. – ธ.ค. 2026 (14 สัปดาห์)' },
-    duration: { zh: '14 周', en: '14 weeks', th: '14 สัปดาห์' },
-    hours: { zh: '14 小时', en: '14 hours', th: '14 ชั่วโมง' },
-    schedule: { zh: '每周一 16:00–17:00', en: 'Monday 4:00–5:00 pm', th: 'วันจันทร์ 16:00–17:00' },
-    price: 12600,
+    startMonth: '2027-01',
+    start: { zh: "2027年1月18日至3月29日", en: "18 January – 29 March 2027", th: "18 มกราคม – 29 มีนาคม 2027" },
+    duration: { zh: "11 周", en: "11 weeks", th: "11 สัปดาห์" },
+    hours: { zh: "11 小时", en: "11 hours", th: "11 ชั่วโมง" },
+    schedule: { zh: "周一 16:00–17:00", en: "Monday 16:00–17:00", th: "จันทร์ 16:00–17:00" },
+    price: 9900,
     mentor: 'Mr Graham',
     desc: {
       zh: '以兴趣为导向、充满趣味的方式接触医学，为大学医学入学及未来大学申请做好准备。若学生有信心，也可以准备化学 Single Award（0620），为履历再添一门 IGCSE。',
@@ -172,11 +160,11 @@ COURSES.push(
     name: { zh: '医学申请核心课程（Medical Pathway · Core Track）', en: 'Medical Pathway (Core Track)', th: 'Medical Pathway (แทร็กหลัก)' },
     grades: 'Y12–Y13', gmin: 12, gmax: 13,
     format: { zh: '小班课程（全年滚动）', en: 'Small-group class (year-round)', th: 'เรียนกลุ่มเล็ก (ตลอดปี)' },
-    startMonth: 'rolling',
-    start: { zh: '全年滚动开班（至少 15 周）', en: 'Year-round (minimum 15 weeks)', th: 'ตลอดปี (อย่างน้อย 15 สัปดาห์)' },
-    duration: { zh: '15 周以上', en: '15+ weeks', th: '15 สัปดาห์ขึ้นไป' },
+    startMonth: '2027-01',
+    start: { zh: "2027年1月第二周至6月第一周", en: "Second week of January to first week of June 2027", th: "สัปดาห์ที่สองของมกราคมถึงสัปดาห์แรกของมิถุนายน 2027" },
+    duration: { zh: "15 周", en: "15 weeks", th: "15 สัปดาห์" },
     hours: { zh: '30 小时', en: '30 hours', th: '30 ชั่วโมง' },
-    schedule: { zh: '每周六 9:00–11:00', en: 'Saturday 9:00–11:00 am', th: 'วันเสาร์ 9:00–11:00' },
+    schedule: { zh: "周六 09:00–11:00，假期停课", en: "Saturday 09:00–11:00, excluding holiday Saturdays", th: "เสาร์ 09:00–11:00 ยกเว้นวันหยุด" },
     price: 33000,
     mentor: 'Mr Graham',
     summary: {

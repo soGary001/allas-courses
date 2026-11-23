@@ -4,6 +4,16 @@
 
 const I18N = {
   zh: {
+    timeDec: '2026年12月',
+    timeTerm2: '2026–27 学年第二学期',
+    signupClosed: '报名已关闭',
+    signupEnquiry: '咨询报名',
+    signupEmailNote: '通过邮件联系课程负责人',
+    feeEnquiry: '请邮件咨询费用',
+    courseGuide: '查看课程手册',
+    competitionDate: '竞赛时间',
+    examDate: '考试时间',
+    classDates: '上课日期（月/日）',
     siteTitle: 'All A\u0027s 课程中心',
     schoolName: '兰纳国际学校 All A\u0027s',
     siteSub: 'Academic Programmes 2026–2027',
@@ -88,6 +98,16 @@ const I18N = {
     loading: '加载中…'
   },
   en: {
+    timeDec: 'December 2026',
+    timeTerm2: 'Term 2, 2026–27',
+    signupClosed: 'Registration closed',
+    signupEnquiry: 'Enquire by email',
+    signupEmailNote: 'Email the programme contacts',
+    feeEnquiry: 'Email for fees',
+    courseGuide: 'View course guide',
+    competitionDate: 'Competition date',
+    examDate: 'Exam date',
+    classDates: 'Class dates (month/day)',
     siteTitle: 'All A\u0027s Course Hub',
     schoolName: 'All A\u0027s · Lanna International School',
     siteSub: 'Academic Programmes 2026–2027',
@@ -172,6 +192,16 @@ const I18N = {
     loading: 'Loading…'
   },
   th: {
+    timeDec: 'ธันวาคม 2026',
+    timeTerm2: 'ภาคเรียนที่ 2 ปี 2026–27',
+    signupClosed: 'ปิดรับสมัครแล้ว',
+    signupEnquiry: 'สอบถามการสมัครทางอีเมล',
+    signupEmailNote: 'ติดต่อผู้ดูแลหลักสูตรทางอีเมล',
+    feeEnquiry: 'สอบถามค่าธรรมเนียมทางอีเมล',
+    courseGuide: 'ดูคู่มือหลักสูตร',
+    competitionDate: 'วันแข่งขัน',
+    examDate: 'วันสอบ',
+    classDates: 'วันที่เรียน (เดือน/วัน)',
     siteTitle: 'ศูนย์หลักสูตร All A\u0027s',
     schoolName: 'All A\u0027s โรงเรียนนานาชาติลานนา',
     siteSub: 'หลักสูตรวิชาการ 2026–2027',

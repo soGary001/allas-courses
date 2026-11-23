@@ -790,14 +790,14 @@ const COURSE_OVERVIEWS = {
     en: [
       { tag: 'Think Deeper. Solve Smarter. Compete Stronger.' },
       { h: 'Programme Overview', table: { head: ['Category', 'Details'], rows: [
-        ['Programme Name', 'Junior Physics Challenge (JPC) Programme'],
-        ['Target Students', 'Year 8 – Year 10'],
+        ['Programme Name', 'Physics Excellence Programme'],
+        ['Target Students', 'Year 7 – Year 10'],
         ['Programme Type', 'Physics Enrichment + Competition Preparation'],
         ['Organiser (Competition)', 'British Physics Olympiad (BPhO)'],
         ['Country', 'United Kingdom'],
         ['Academic Level', 'KS3 → Early IGCSE bridging']
       ] } },
-      { h: 'Programme Aim', p: 'The JPC programme is designed to introduce students to problem-solving in Physics, developing logical thinking, analytical skills, and scientific reasoning. It supports students in strengthening their academic performance and building a solid foundation for IGCSE and A-Level Physics, enabling them to approach more advanced concepts with confidence. In addition, the programme offers structured preparation for students who are interested in academic competitions, with the opportunity to participate in the Junior Physics Challenge (JPC).' },
+      { h: 'Programme Aim', p: 'The Physics Excellence Programme is designed to introduce students to problem-solving in Physics, developing logical thinking, analytical skills, and scientific reasoning. It supports students in strengthening their academic performance and building a solid foundation for IGCSE and A-Level Physics, enabling them to approach more advanced concepts with confidence. In addition, the programme offers structured preparation for students who are interested in academic competitions, with the opportunity to participate in the Junior Physics Challenge (JPC).' },
       { h: 'Curriculum Highlights · Core Topics', list: [
         'Forces & Motion',
         'Energy',
@@ -822,7 +822,7 @@ const COURSE_OVERVIEWS = {
         'Preparation for higher-level physics competitions',
         'Solid foundation for IGCSE / A-Level Physics'
       ] },
-      { h: 'Why Choose JPC', checks: [
+      { h: 'Why study physics?', checks: [
         'Builds strong thinking skills early',
         'Bridges KS3 to IGCSE Physics',
         'Prepares students for competitive academic environments',
@@ -833,14 +833,14 @@ const COURSE_OVERVIEWS = {
     zh: [
       { tag: '更深地思考，更巧地解题，更强地竞赛。' },
       { h: '项目概览', table: { head: ['项目', '内容'], rows: [
-        ['项目名称', '少年物理挑战赛项目（Junior Physics Challenge, JPC）'],
-        ['适合学生', 'Y8 – Y10'],
+        ['项目名称', '物理卓越课程'],
+        ['适合学生', 'Y7 – Y10'],
         ['项目类型', '物理拓展 + 竞赛备赛'],
         ['赛事主办方', '英国物理奥林匹克（BPhO）'],
         ['国家', '英国'],
         ['学术水平', 'KS3 衔接 IGCSE 早期阶段']
       ] } },
-      { h: '项目目标', p: 'JPC 项目旨在引导学生进入物理问题解决的世界，培养逻辑思维、分析能力与科学推理能力，帮助学生巩固学业表现，为 IGCSE 与 A-Level 物理打下坚实基础，从而自信地接触更高阶的概念。此外，项目为有兴趣参加学术竞赛的学生提供系统化备赛训练，学生将有机会参加少年物理挑战赛（JPC）。' },
+      { h: '项目目标', p: '本课程旨在引导学生进入物理问题解决的世界，培养逻辑思维、分析能力与科学推理能力，帮助学生巩固学业表现，为 IGCSE 与 A-Level 物理打下坚实基础，从而自信地接触更高阶的概念。此外，项目为有兴趣参加学术竞赛的学生提供系统化备赛训练，学生将有机会参加少年物理挑战赛（JPC）。' },
       { h: '课程亮点 · 核心主题', list: [
         '力与运动（Forces & Motion）',
         '能量（Energy）',
@@ -865,7 +865,7 @@ const COURSE_OVERVIEWS = {
         '为更高水平的物理竞赛做好准备',
         '为 IGCSE / A-Level 物理打下坚实基础'
       ] },
-      { h: '为什么选择 JPC', checks: [
+      { h: '课程特色', checks: [
         '尽早培养强大的思维能力',
         '衔接 KS3 与 IGCSE 物理',
         '为竞争性学术环境做好准备',
@@ -876,14 +876,14 @@ const COURSE_OVERVIEWS = {
     th: [
       { tag: 'คิดลึกกว่า แก้โจทย์ชาญกว่า แข่งขันแข็งแกร่งกว่า' },
       { h: 'ภาพรวมโปรแกรม', table: { head: ['หัวข้อ', 'รายละเอียด'], rows: [
-        ['ชื่อโปรแกรม', 'โปรแกรม Junior Physics Challenge (JPC)'],
-        ['กลุ่มนักเรียน', 'ปี 8 – ปี 10'],
+        ['ชื่อโปรแกรม', 'หลักสูตรฟิสิกส์สู่ความเป็นเลิศ'],
+        ['กลุ่มนักเรียน', 'ปี 7 – ปี 10'],
         ['ประเภทโปรแกรม', 'เสริมฟิสิกส์ + เตรียมการแข่งขัน'],
         ['ผู้จัดการแข่งขัน', 'British Physics Olympiad (BPhO)'],
         ['ประเทศ', 'สหราชอาณาจักร'],
         ['ระดับวิชาการ', 'เชื่อม KS3 สู่ IGCSE ช่วงต้น']
       ] } },
-      { h: 'เป้าหมายของโปรแกรม', p: 'โปรแกรม JPC ออกแบบมาเพื่อแนะนำนักเรียนสู่การแก้ปัญหาทางฟิสิกส์ พัฒนาตรรกะ ทักษะการวิเคราะห์ และการให้เหตุผลทางวิทยาศาสตร์ ช่วยเสริมผลการเรียนและสร้างพื้นฐานที่มั่นคงสำหรับฟิสิกส์ IGCSE และ A-Level ให้นักเรียนเข้าหาแนวคิดขั้นสูงด้วยความมั่นใจ นอกจากนี้ยังมีการเตรียมความพร้อมอย่างเป็นระบบสำหรับผู้ที่สนใจการแข่งขันวิชาการ พร้อมโอกาสเข้าร่วม Junior Physics Challenge (JPC)' },
+      { h: 'เป้าหมายของโปรแกรม', p: 'หลักสูตรนี้ออกแบบมาเพื่อแนะนำนักเรียนสู่การแก้ปัญหาทางฟิสิกส์ พัฒนาตรรกะ ทักษะการวิเคราะห์ และการให้เหตุผลทางวิทยาศาสตร์ ช่วยเสริมผลการเรียนและสร้างพื้นฐานที่มั่นคงสำหรับฟิสิกส์ IGCSE และ A-Level ให้นักเรียนเข้าหาแนวคิดขั้นสูงด้วยความมั่นใจ นอกจากนี้ยังมีการเตรียมความพร้อมอย่างเป็นระบบสำหรับผู้ที่สนใจการแข่งขันวิชาการ พร้อมโอกาสเข้าร่วม Junior Physics Challenge (JPC)' },
       { h: 'ไฮไลต์หลักสูตร · หัวข้อหลัก', list: [
         'แรงและการเคลื่อนที่ (Forces & Motion)',
         'พลังงาน (Energy)',
@@ -908,7 +908,7 @@ const COURSE_OVERVIEWS = {
         'เตรียมพร้อมสำหรับการแข่งขันฟิสิกส์ระดับสูง',
         'พื้นฐานที่มั่นคงสำหรับฟิสิกส์ IGCSE / A-Level'
       ] },
-      { h: 'ทำไมต้องเลือก JPC', checks: [
+      { h: 'จุดเด่นของหลักสูตร', checks: [
         'สร้างทักษะการคิดที่แข็งแกร่งตั้งแต่เนิ่นๆ',
         'เชื่อมโยง KS3 สู่ฟิสิกส์ IGCSE',
         'เตรียมนักเรียนสำหรับสภาพแวดล้อมการแข่งขันทางวิชาการ',

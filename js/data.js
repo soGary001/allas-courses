@@ -34,6 +34,10 @@ const FORM_URLS = {
   'geo-tut':   'https://docs.google.com/forms/d/1gwmq2JUI8W-Leq0ypHR_BlT3PJJGzkbd1X_SIhcLJ3g/edit',
   'soc-tut':   'https://docs.google.com/forms/d/1gwmq2JUI8W-Leq0ypHR_BlT3PJJGzkbd1X_SIhcLJ3g/edit',
   'psy-tut':   'https://docs.google.com/forms/d/1gwmq2JUI8W-Leq0ypHR_BlT3PJJGzkbd1X_SIhcLJ3g/edit',
+  // 2026–2027 新课程报名表
+  'kangaroo-math': 'https://docs.google.com/forms/d/e/1FAIpQLSemWC-QzVIBjxtrA7Ii8L_iBHkpZlF6bqtViEbV9Xjlhv8EXQ/viewform',
+  'ai-computing': 'https://docs.google.com/forms/d/e/1FAIpQLSfrbtuuUE4vEuTk4aJEYpLpHvwSexBlq73T9TOEUrFUr4Ajyg/viewform',
+  'research-innovation': 'https://docs.google.com/forms/d/e/1FAIpQLSfKtDvQ0WoEH5jeUKGU2jM_d1GK53btKgHz-6nlNPUuOgEp5w/viewform',
   // 数学竞赛
   'amc1012':    'https://docs.google.com/forms/d/e/1FAIpQLScWx95YroR73qxpZOSr0iWNyci_smztqq1R38pr_bjFszAscg/viewform?usp=header',
   'amc8':       'https://docs.google.com/forms/d/e/1FAIpQLScklTUoQ2ZYq5l6MRhRsFdJba3HFd-C8Dq9TU2hsqVxXOwUmg/viewform?usp=header',
@@ -61,6 +65,8 @@ const FORM_URLS = {
 
 /* 科目元数据：图标 + SVG 封面配色（森林绿 / 麦穗黄系） */
 const SUBJECTS = {
+  chinese:    { icon: "文", c1: "#344638", c2: "#41765d", name: { zh: "中文", en: "Chinese", th: "ภาษาจีน" } },
+  research:   { icon: "🔎", c1: "#254659", c2: "#467586", name: { zh: "科研与创新", en: "Research & Innovation", th: "การวิจัยและนวัตกรรม" } },
   english:    { icon: '📖', c1: '#1f4d2e', c2: '#3a7d4d', name: { zh: '英语', en: 'English', th: 'ภาษาอังกฤษ' } },
   math:       { icon: '🔢', c1: '#173d24', c2: '#2e6b40', name: { zh: '数学', en: 'Mathematics', th: 'คณิตศาสตร์' } },
   science:    { icon: '🔬', c1: '#2e6b40', c2: '#5c9a6a', name: { zh: '科学', en: 'Science', th: 'วิทยาศาสตร์' } },
@@ -80,6 +86,7 @@ const SUBJECTS = {
 
 /* 分类 Tab */
 const CATEGORIES = {
+  enrichment: { zh: "学术拓展", en: "Academic Enrichment", th: "เสริมทักษะวิชาการ" },
   tutoring:    { zh: '学术辅导', en: 'Academic Tutoring', th: 'ติวเตอร์วิชาการ' },
   competition: { zh: '学科竞赛备赛', en: 'Competition Preparation', th: 'เตรียมการแข่งขัน' },
   speaking:    { zh: '演讲辩论与 MUN', en: 'Public Speaking & MUN', th: 'การพูดและ MUN' },

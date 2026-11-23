@@ -4,7 +4,7 @@ const vm = require('vm');
 
 const ctx = {};
 vm.createContext(ctx);
-const files = ['js/data.js','js/data2.js','js/data3.js','js/data4.js','js/data5.js','js/i18n.js'];
+const files = ['js/data.js','js/data2.js','js/data3.js','js/data4.js','js/data5.js','js/enrichment.js','js/i18n.js'];
 
 let collected = '';
 for (const f of files) {
@@ -42,13 +42,14 @@ console.log('ID:', COURSES.map(c => c.id).join(', '));
 console.log('\n========== 报名链接覆盖 ==========');
 const formUrls = ctx.FORM_URLS || {};
 console.log('FORM_URLS 条目:', Object.keys(formUrls).length);
-const missingForm = COURSES.filter(c => !formUrls[c.id]);
+const missingForm = COURSES.filter(c => !formUrls[c.id] && !c.comingSoon && !c.registrationClosed && !c.enquiryEmails);
 console.log('无专属链接(回退统一表单):', missingForm.length ? missingForm.map(c => c.id).join(', ') : '无');
 
 console.log('\n========== 图片引用 ==========');
 let imgRefs = [];
 for (const c of COURSES) {
-  if (c.imgs) imgRefs.push(...(Array.isArray(c.imgs) ? c.imgs : [c.imgs]));
+  if (Array.isArray(c.imgs)) c.imgs.forEach(path => imgRefs.push(path));
+  else if (c.imgs) imgRefs.push(c.imgs);
   if (c.cover) imgRefs.push(c.cover);
 }
 if (ctx.CONFIG) {
@@ -84,7 +85,7 @@ console.log('\n========== 分类统计 ==========');
 const cats = ctx.CATEGORIES || {};
 const byCat = {};
 for (const c of COURSES) {
-  const cat = c.category || 'unknown';
+  const cat = c.cat || 'unknown';
   byCat[cat] = (byCat[cat] || 0) + 1;
 }
 console.log(JSON.stringify(byCat, null, 2));

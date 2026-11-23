@@ -875,9 +875,9 @@ Object.assign(COURSE_OVERVIEWS, {
         'Clear pathway into Debate / MUN / Leadership tracks'
       ] },
       { h: 'Programme Overview', table: { head: ['Category', 'Details'], rows: [
-        ['Programme Name', 'Introduction to Debating'],
+        ['Programme Name', 'Debating & MUN Excellence Programme'],
         ['Target Students', 'Year 4 – Year 6'],
-        ['Schedule', 'Monday 3:20–4:20 pm'],
+        ['Schedule', 'Monday 3:40–4:40 pm'],
         ['Class Format', 'Small group (8 students)']
       ] } },
       { h: 'Why Choose This Programme', checks: [
@@ -900,9 +900,9 @@ Object.assign(COURSE_OVERVIEWS, {
         '为辩论 / MUN / 领导力方向铺就清晰路径'
       ] },
       { h: '项目概览', table: { head: ['项目', '内容'], rows: [
-        ['项目名称', '辩论入门（Introduction to Debating）'],
+        ['项目名称', '辩论与模拟联合国卓越课程'],
         ['适合年级', 'Y4–Y6'],
-        ['上课时间', '周一 15:20–16:20'],
+        ['上课时间', '周一 15:40–16:40'],
         ['班级形式', '小班教学（8 人）']
       ] } },
       { h: '为什么选择本项目', checks: [
@@ -925,9 +925,9 @@ Object.assign(COURSE_OVERVIEWS, {
         'มีเส้นทางที่ชัดเจนสู่ทิศทางโต้วาที / MUN / ภาวะผู้นำ'
       ] },
       { h: 'ภาพรวมโปรแกรม', table: { head: ['หมวดหมู่', 'รายละเอียด'], rows: [
-        ['ชื่อโปรแกรม', 'การโต้วาทีเบื้องต้น (Introduction to Debating)'],
+        ['ชื่อโปรแกรม', 'หลักสูตรโต้วาทีและสหประชาชาติจำลองสู่ความเป็นเลิศ'],
         ['กลุ่มเป้าหมาย', 'ปี 4 – ปี 6'],
-        ['ตารางเรียน', 'จันทร์ 15:20–16:20'],
+        ['ตารางเรียน', 'จันทร์ 15:40–16:40'],
         ['รูปแบบชั้นเรียน', 'กลุ่มย่อย (8 คน)']
       ] } },
       { h: 'ทำไมต้องเลือกโปรแกรมนี้', checks: [
@@ -936,7 +936,7 @@ Object.assign(COURSE_OVERVIEWS, {
     ]
   },
 
-  /* ========== Competitive Debating（专属大纲）
+  /* ========== Debating & MUN Excellence Programme（专属大纲）
    * 来源：Untitled document（修改)(1).docx（2026-08-14 嵌入） ========== */
   'speaking-debate-comp': {
     en: [
@@ -955,7 +955,7 @@ Object.assign(COURSE_OVERVIEWS, {
         'Clear pathway into Debate / MUN / Leadership tracks'
       ] },
       { h: 'Programme Overview', table: { head: ['Category', 'Details'], rows: [
-        ['Programme Name', 'Competitive Debating'],
+        ['Programme Name', 'Debating & MUN Excellence Programme'],
         ['Target Students', 'Year 7 – Year 9'],
         ['Schedule', 'Wednesday 4:00–5:30 pm'],
         ['Class Format', 'Small group (8 students)'],
@@ -978,7 +978,7 @@ Object.assign(COURSE_OVERVIEWS, {
         '为辩论 / MUN / 领导力方向铺就清晰路径'
       ] },
       { h: '项目概览', table: { head: ['项目', '内容'], rows: [
-        ['项目名称', '竞技辩论（Competitive Debating）'],
+        ['项目名称', '辩论与模拟联合国卓越课程'],
         ['适合年级', 'Y7–Y9'],
         ['上课时间', '周三 16:00–17:30'],
         ['班级形式', '小班教学（8 人）'],
@@ -1001,7 +1001,7 @@ Object.assign(COURSE_OVERVIEWS, {
         'มีเส้นทางที่ชัดเจนสู่ทิศทางโต้วาที / MUN / ภาวะผู้นำ'
       ] },
       { h: 'ภาพรวมโปรแกรม', table: { head: ['หมวดหมู่', 'รายละเอียด'], rows: [
-        ['ชื่อโปรแกรม', 'การโต้วาทีแข่งขัน (Competitive Debating)'],
+        ['ชื่อโปรแกรม', 'หลักสูตรโต้วาทีและสหประชาชาติจำลองสู่ความเป็นเลิศ'],
         ['กลุ่มเป้าหมาย', 'ปี 7 – ปี 9'],
         ['ตารางเรียน', 'พุธ 16:00–17:30'],
         ['รูปแบบชั้นเรียน', 'กลุ่มย่อย (8 คน)'],

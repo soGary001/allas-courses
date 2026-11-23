@@ -264,6 +264,7 @@ button { font-family: inherit; cursor: pointer; }
 .gallery img {
   width: 100%; height: auto; display: block; object-fit: contain; background: var(--white);
 }
+.detail-main, .detail-aside { min-width: 0; }
 .detail-grid { display: grid; grid-template-columns: 1fr 340px; gap: 22px; margin-top: 22px; align-items: start; }
 .detail-sec {
   background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow);
@@ -305,7 +306,7 @@ button { font-family: inherit; cursor: pointer; }
 .grade-table-wrap .grade-table tbody tr:last-child td:first-child { border-bottom-left-radius: 12px; }
 .grade-table-wrap .grade-table tbody tr:last-child td:last-child { border-bottom-right-radius: 12px; }
 .grade-table-wrap .grade-table .grade-cell { font-weight: 800; color: var(--green-700); font-size: 13px; }
-.grade-table-wrap .grade-table .grade-note { font-size: 10px; color: var(--ink-2); opacity: 0.7; font-weight: 400; white-space: nowrap; }
+.grade-table-wrap .grade-table .grade-note { font-size: 10px; color: var(--ink-2); opacity: 0.85; font-weight: 400; white-space: normal; overflow-wrap: anywhere; }
 .grade-row { display: flex; border-bottom: 1px solid #e2e7e2; }
 .grade-row:last-child { border-bottom: none; }
 .grade-row:nth-child(odd) { background: #f6f8f3; }
@@ -354,6 +355,8 @@ button { font-family: inherit; cursor: pointer; }
 .bar-item { font-size: 13px; color: var(--ink-2); }
 .bar-item strong { display: block; font-size: 15px; color: var(--green-900); }
 .bar-actions { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+.bar-actions .btn:disabled { opacity: .65; cursor: default; }
+.bar-note:empty { display: none; }
 .bar-note { width: 100%; font-size: 12px; color: var(--ink-2); text-align: right; }
 
 /* ---------- LINE 弹窗 ---------- */
