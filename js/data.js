@@ -351,31 +351,5 @@ const COURSES = [
       en: ['Thorough understanding of theories, studies and methods', 'Statistical literacy and critical evaluation of evidence', 'Examination readiness for IGCSE, A-Level and IB Psychology'],
       th: ['เข้าใจทฤษฎี การวิจัย และวิธีการอย่างละเอียด', 'ความรู้ทางสถิติและการประเมินหลักฐานอย่างมีวิจารณญาณ', 'พร้อมสอบจิตวิทยา IGCSE, A-Level และ IB']
     }
-  },
-
-  /* ============ 即将上架（Coming Soon）=========== */
-  {
-    id: 'coding-robotics', cat: 'competition', subject: 'cs',
-    cover: 'assets/img/covers/coding-robotics-cover.jpg',
-    name: { zh: '编程与机器人竞赛', en: 'Coding & Robotics Competition', th: 'การแข่งขันเขียนโค้ดและหุ่นยนต์' },
-    grades: 'Y3–Y13', gmin: 3, gmax: 13,
-    comingSoon: true,
-    summary: {
-      zh: '编程与机器人竞赛备赛课程即将上线，敬请期待。',
-      en: 'Coding & Robotics Competition preparation programme — launching soon.',
-      th: 'หลัักสูตรเตรียมแข่งขันเขียนโค้ดและหุ่นยนต์ — เร็ว ๆ นี้'
-    }
-  },
-  {
-    id: 'cs-competition', cat: 'competition', subject: 'cs',
-    cover: 'assets/img/covers/cs-competition-cover.jpg',
-    name: { zh: '计算机科学竞赛', en: 'Computer Science Competition', th: 'การแข่งขันวิทยาการคอมพิวเตอร์' },
-    grades: 'Y9–Y13', gmin: 9, gmax: 13,
-    comingSoon: true,
-    summary: {
-      zh: '计算机科学竞赛备赛课程即将上线，敬请期待。',
-      en: 'Computer Science Competition preparation programme — launching soon.',
-      th: 'หลัักสูตรเตรียมแข่งขันวิทยาการคอมพิวเตอร์ — เร็ว ๆ นี้'
-    }
   }
 ];

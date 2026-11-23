@@ -116,7 +116,7 @@
     if (state.q) {
       var q = state.q.toLowerCase();
       var hay = [L(c.name), c.name.zh, c.name.en, c.name.th, L(SUBJECTS[c.subject].name),
-        c.organizer ? L(c.organizer) : '', c.mentor || '', c.searchTerms || ''].join(' ').toLowerCase();
+        c.organizer ? L(c.organizer) : '', L(c.mentor), c.searchTerms || ''].join(' ').toLowerCase();
       if (hay.indexOf(q) === -1) return false;
     }
     return true;
@@ -232,7 +232,7 @@
   /* ---------- 详情页 ---------- */
   function factRow(label, value, isLink) {
     if (value == null || value === '') return '';
-    var v = isLink ? '<a href="mailto:' + esc(value) + '">' + esc(value) + '</a>' : esc(value);
+    var v = isLink ? '<a href="mailto:' + esc(value) + '">' + esc(value) + '</a>' : esc(value).replace(/\n/g, '<br>');
     return '<div class="fact"><div class="fact-label">' + esc(label) + '</div><div class="fact-value">' + v + '</div></div>';
   }
   function factRowTbd(label) {
@@ -296,20 +296,28 @@
     }
 
     var facts = '';
+    if (c.scheduleName) facts += factRow(T('courseNameCol'), L(c.scheduleName));
     facts += factRow(T('factSubject'), L(SUBJECTS[c.subject].name));
     facts += factRow(T('factGrades'), gradeText(c));
     if (c.organizer) facts += factRow(T('factOrg'), L(c.organizer));
     if (c.format) facts += factRow(T('factFormat'), L(c.format));
     if (c.start) facts += factRow(T('factStart'), L(c.start));
     else facts += factRowTbd(T('factStart'));
+    if (c.finish) facts += factRow(T('finishCol'), L(c.finish));
     if (c.duration) facts += factRow(T('factDuration'), L(c.duration));
     if (c.hours) facts += factRow(T('factHours'), L(c.hours));
     if (c.location) facts += factRow(T('factLocation'), c.location);
-    if (c.schedule) facts += factRow(T('factSchedule'), L(c.schedule));
+    if (c.schedule) {
+      var schedule = L(c.schedule);
+      if (c.scheduleGroups) {
+        schedule += '\n' + c.scheduleGroups.map(function (group) { return group.grade + '  ' + group.time; }).join('\n');
+      }
+      facts += factRow(T('factSchedule'), schedule);
+    }
     if (c.classDates) facts += factRow(T('classDates'), c.classDates);
     if (c.competitionDate) facts += factRow(T('competitionDate'), L(c.competitionDate));
     if (c.examDate) facts += factRow(T('examDate'), L(c.examDate));
-    if (c.mentor) facts += factRow(T('factMentor'), c.mentor);
+    if (c.mentor) facts += factRow(T('factMentor'), L(c.mentor));
     if (c.curriculum) facts += factRow(T('factCurriculum'), c.curriculum);
     if (c.price != null || c.feeRange) {
       var feeVal = c.feeRange ? L(c.feeRange) : (fmtPrice(c.price) + ' ' + T('thb'));
@@ -318,7 +326,7 @@
       facts += factRow(T('factFee'), T('feeEnquiry'));
     } else facts += factRowTbd(T('factFee'));
     (c.enquiryEmails || [CONFIG.email]).forEach(function (email) {
-      facts += factRow(T('factBooking'), email, true);
+      facts += factRow(c.enquiryLabel ? L(c.enquiryLabel) : T('factBooking'), email, true);
     });
 
     var gradeTable = '';
@@ -441,11 +449,28 @@
       closeBlock();
       return html;
     }
-    var descParas = parseDesc(L(c.desc));
-    if (c.introImage) {
-      descParas += '<img class="intro-illustration" src="' + esc(c.introImage) + '" alt="' + esc(T('dOverview') + ' · ' + L(c.name)) + '" loading="lazy">';
+    var description = L(c.desc);
+    var guideLink = c.guideUrl ? '<p><a href="' + esc(c.guideUrl) + '" target="_blank" rel="noopener noreferrer">' + T('courseGuide') + '</a></p>' : '';
+    var descParas;
+    if (guideLink && c.guideAfterFirstParagraph) {
+      var paragraphs = description.split(/\n\s*\n/);
+      descParas = parseDesc(paragraphs.shift()) + guideLink + parseDesc(paragraphs.join('\n\n'));
+    } else {
+      descParas = parseDesc(description);
     }
-    if (c.guideUrl) descParas += '<p><a href="' + esc(c.guideUrl) + '" target="_blank" rel="noopener noreferrer">' + T('courseGuide') + '</a></p>';
+    if (c.introImage) {
+      var imageAlt = c.introImageAlt ? L(c.introImageAlt) : T('dOverview') + ' · ' + L(c.name);
+      descParas += '<img class="intro-illustration" src="' + esc(c.introImage) + '" alt="' + esc(imageAlt) + '" loading="lazy">';
+    }
+    if (!c.guideAfterFirstParagraph) descParas += guideLink;
+    if (c.scheduleGroups) {
+      var headers = ['courseNameCol', 'organiserCountryCol', 'gradeCol', 'examMonthCol', 'startCol', 'finishCol', 'weeksCol', 'hoursCol', 'dayCol', 'mentorCol', 'feeCol'];
+      var scheduleRows = c.scheduleGroups.map(function (group) {
+        return [L(c.scheduleName), L(c.organizer), group.grade, L(group.exam), L(c.start), L(c.finish),
+          L(c.duration), L(c.hours), L(c.schedule) + ' ' + group.time, L(c.mentor), fmtPrice(c.price) + ' ' + T('thb')];
+      });
+      descParas = overviewBlocksHTML([{ h: T('dGrades'), table: { head: headers.map(T), rows: scheduleRows } }]) + descParas;
+    }
     var introSec = (descParas || noteSec)
       ? ('<section class="detail-sec ov-sec"><h2>' + (c.introTitle ? esc(L(c.introTitle)) : (c.cat === 'competition' ? T('dIntroComp') : T('dIntro'))) + '</h2>' + descParas + noteSec + '</section>')
       : '';

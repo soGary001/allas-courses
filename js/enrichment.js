@@ -20,8 +20,10 @@
     {
       id: 'kangaroo-math', cat: 'competition', subject: 'math',
       introTitle: language('课程介绍', 'About This Course', 'รายละเอียดหลักสูตร'),
-      name: language('袋鼠数学竞赛培训', 'Kangaroo Mathematics Competition Training', 'หลักสูตรเตรียมแข่งขันคณิตศาสตร์ Kangaroo'),
-      grades: 'Y4–Y10', gmin: 4, gmax: 10, cover: 'assets/img/covers/kangaroo-puzzle.jpg',
+      name: language('袋鼠数学竞赛培训课程', 'Kangaroo Mathematics Competition Training Programme', 'หลักสูตรเตรียมแข่งขันคณิตศาสตร์ Kangaroo'),
+      grades: 'Y4–Y10', gmin: 4, gmax: 10, cover: 'assets/img/covers/kangaroo-math-thailand.png', fullCover: true,
+      introImage: 'assets/img/covers/kangaroo-puzzle.jpg',
+      introImageAlt: language('袋鼠数学竞赛训练活动', 'Kangaroo mathematics training activity', 'กิจกรรมฝึกคณิตศาสตร์ Kangaroo'),
       startMonth: '2026-12', start: language('2026年12月3日至2027年3月24日', '3 December 2026 – 24 March 2027', '3 ธันวาคม 2026 – 24 มีนาคม 2027'),
       duration: language('10 周训练，另预留 2 周复习或补课', '10 training weeks plus 2 weeks reserved for revision or catch-up', 'ฝึก 10 สัปดาห์ และสำรองอีก 2 สัปดาห์สำหรับทบทวนหรือเรียนชดเชย'),
       hours: language('20 小时', '20 hours', '20 ชั่วโมง'),
@@ -69,7 +71,8 @@ The programme consists of 10 sessions, with each session lasting 2 hours, provid
       introImage: 'assets/img/covers/ai-syllabus.png',
       searchTerms: 'Coding & AI · AI & Computational Thinking · 编程与人工智能',
       name: language('人工智能与计算思维卓越课程', 'Artificial Intelligence and Computational Thinking Champions Programme', 'หลักสูตรปัญญาประดิษฐ์และการคิดเชิงคำนวณ'),
-      grades: 'Y5–Y9', gmin: 5, gmax: 9, mentor: 'Mr Dilip', cover: 'assets/img/cs-tut.jpg',
+      grades: 'Y5–Y9', gmin: 5, gmax: 9, mentor: 'Mr Dilip', cover: 'assets/img/covers/ai-coding-programme.png', fullCover: true,
+      guideAfterFirstParagraph: true,
       startMonth: '2027-01', start: language('2027年1月18日至6月4日', '18 January – 4 June 2027', '18 มกราคม – 4 มิถุนายน 2027'),
       duration: language('20 周', '20 weeks', '20 สัปดาห์'),
       schedule: language('Y5–Y6 周六 10:30–11:30；Y7 周一、Y8 周三、Y9 周五 16:00–17:30', 'Y5–Y6 Saturday 10:30–11:30 · Y7 Monday, Y8 Wednesday and Y9 Friday 16:00–17:30', 'Y5–Y6 เสาร์ 10:30–11:30 · Y7 จันทร์ Y8 พุธ และ Y9 ศุกร์ เวลา 16:00–17:30'),
@@ -101,73 +104,86 @@ Progress is assessed through short knowledge checks, a portfolio of practical wo
     },
     {
       id: 'research-innovation', cat: 'enrichment', subject: 'research',
-      searchTerms: 'Research Innovation & Patent · 专利 · สิทธิบัตร',
-      name: language('研究、创新与专利开发课程（清迈大学教授指导）', 'Research, Innovation & Patent Development Programme (with CMU professors)', 'หลักสูตรวิจัย นวัตกรรม และการพัฒนาสิทธิบัตร (กับอาจารย์มหาวิทยาลัยเชียงใหม่)'),
-      grades: 'Y7–Y13', gmin: 7, gmax: 13, cover: 'assets/img/covers/research-mentoring.jpg',
+      searchTerms: 'Research Innovation & Patent · Intellectual Property · 专利 · 知识产权 · สิทธิบัตร',
+      name: language('研究、创新与知识产权（IP）开发课程', 'Research, Innovation & Intellectual Property(IP) Development Programme', 'หลักสูตรการวิจัย นวัตกรรม และการพัฒนาทรัพย์สินทางปัญญา (IP)'),
+      grades: 'Y7–Y13', gmin: 7, gmax: 13, cover: 'assets/img/covers/research-ip-programme.png', fullCover: true,
+      mentor: language('经验丰富的科学家', 'Experienced scientists', 'นักวิทยาศาสตร์ผู้มีประสบการณ์'),
+      enquiryLabel: language('更多详情请发邮件咨询', 'Please email for more details', 'สอบถามรายละเอียดเพิ่มเติมทางอีเมล'),
       startMonth: 'term2', start: language('2026–2027 学年第二学期', 'Term 2, 2026–2027 academic year', 'ภาคเรียนที่ 2 ปีการศึกษา 2026–2027'),
       duration: language('约一学年', 'Approximately one academic year', 'ประมาณหนึ่งปีการศึกษา'),
       format: language('每组 2–3 人', 'Groups of 2–3 students', 'กลุ่มละ 2–3 คน'),
       schedule: language('周末每周 2 小时，主要在 LANNA 校内', '2 hours per week on weekends, primarily at Lanna', 'สุดสัปดาห์ สัปดาห์ละ 2 ชั่วโมง โดยเรียนที่โรงเรียนลานนาเป็นหลัก'),
       price: null, feeEnquiry: true,
-      summary: language('在清迈大学理学院教授指导下，围绕自己的学术兴趣开展小组研究。', 'Work with a Chiang Mai University science professor on a small-group project shaped by your academic interests.', 'ทำโครงงานกลุ่มเล็กตามความสนใจ ภายใต้คำแนะนำของอาจารย์คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่'),
+      summary: language('在科学家和学校学科教师的指导下开展小组研究，探索竞赛与知识产权申请。', 'Work with experienced scientists and school subject teachers on a research project, with opportunities for competitions and intellectual property applications.', 'ทำโครงงานวิจัยร่วมกับนักวิทยาศาสตร์และครูประจำวิชา พร้อมโอกาสเข้าร่วมการแข่งขันและยื่นคำขอทรัพย์สินทางปัญญา'),
       desc: {
-      zh: `独立科研与创新项目提案，由大学教授指导
-拟开课时间：2026–2027 学年第二学期
-学术导师：现任清迈大学教授，具备丰富的科研指导经验
-招生对象：中学生（Y7–Y13）
+        zh: `学术导师：经验丰富的科学家。学校的学科教师也将持续提供指导和学术支持。
+招生对象：中学生（Y7–Y13）。
 
 1. 项目概览
-项目由清迈大学理学院一位经验丰富的教授独立指导。教授熟悉泰国全国科学竞赛，曾指导研究项目开发、学生创新项目和泰国专利申请，并分享过研究案例、创新机会和潜在参赛途径。
-所有课程均安排在周末。学生通过亲身研究，争取将项目成果用于参赛、申请小专利或专利。
+所有课程安排在周末。学生通过课堂以外的动手研究，争取将成果用于竞赛和知识产权（IP）申请。
+项目开始前，导师会与学生讨论其学术优势、兴趣和拟申请的大学专业，再共同确定研究课题。例如：
+• 医学、牙科与健康科学：健康创新、生物医学研究、辅助技术及其他适合的健康科学课题。
+• 工程与技术：机器人、产品设计、环境工程和解决实际问题的技术方案。
+• 生物与自然科学：生物多样性、环境研究、植物科学和生物学应用。
+• 计算机科学：编程、智能系统、自动化和技术创新。
+• 经济、商业与社会科学：应用研究、可持续发展、产品创新和跨学科项目。
 
 2. 项目安排
 • 每组 2–3 人，最多 3 人。
-• 每周 2 小时，以 LANNA 校内为主，也可按项目需要另行安排。
-• 完成一项有实质内容的研究或创新项目约需一个学年。
-• 学生先与教授讨论，以自身学术兴趣和拟申请的大学专业为基础确定课题。
-• 预期成果包括研究论文、创新产品或可运行的原型，可进一步探索国内外竞赛、专利申请、后续开发或商业化的机会。
-建议优先考虑 Y10–Y12，同时为 Y7–Y9 提供合适机会。Y13 学生可按个人时间安排考虑参加。
+• 每周 2 小时，主要在 LANNA 校内进行，也可视项目需要另作安排。
+• 完成一项研究或创新项目约需一学年，实际时长取决于课题复杂程度。
+• 学生先与导师讨论，再围绕自身兴趣和拟申请的大学专业设计研究项目。
+• 预期成果包括论文、创新产品或可运行的原型。学生有机会参加国内或国际竞赛，探索知识产权申请、后续开发或商业化。
+建议优先考虑 Y10–Y12，也为 Y7–Y9 提供合适机会。Y13 学生可按个人时间安排考虑参加。
 
 项目重点
-通过动手研究取得可用于竞赛、小专利或专利申请的学术成果。`,
-      en: `Proposal for an Independent, University-Academic-Mentored Research & Innovation Programme
-Proposed Launch: Term 2, Academic Year 2026–2027
-Academic Mentor: An experienced professor currently working at Chiang Mai University
+通过实践研究取得可用于竞赛和知识产权（IP）申请的学术成果。`,
+        en: `Academic Mentor: Experienced scientists
+The project will also receive ongoing guidance and academic support from the school's subject teachers.
 Target Students: Secondary (Years 7–13)
 1. Programme Overview
-It is a programme which independently led by an experienced professor from the Faculty of Science at Chiang Mai University.
-The professor has experience in research project development, mentoring student innovation projects, and patent applications in Thailand. He is also familiar with national science competitions and has shared examples of research projects, innovation opportunities, and potential competition pathways.
 All sessions would take place on weekends,
-The programme aims to provide students with meaningful, hands-on research experiences that go beyond traditional extracurricular activities, with a strong focus on tangible academic outcomes---competitons-----petty-patent----patent
+The programme aims to provide students with meaningful, hands-on research experiences that go beyond traditional extracurricular activities, with a strong focus on tangible academic outcomes---competitions-----Intellectual Property (IP) applications
+Before beginning a project, the mentor would meet with students to discuss their academic strengths, personal interests and intended majors.
+Research topics would then be developed accordingly.
+For example:
+1.Medicine, Dentistry and Health Sciences: Health-related innovation, biomedical research, assistive technologies or other appropriate health science projects.
+2.Engineering and Technology: Robotics, product design, environmental engineering and practical technological solutions.
+3.Biology and Natural Sciences: Biodiversity, environmental research, plant science and biological applications.
+4.Computer Science: Programming, intelligent systems, automation and technology-based innovation.
+5.Economics, Business and Social Sciences: Applied research, sustainability, product innovation and interdisciplinary projects.
 2. Programme Structure
 ● Group Size: 2–3 students per group, maximum 3.
 ● Schedule: 2 hours per week, primarily at Lanna, with other suitable arrangements where appropriate.
-● Duration: Approximately one academic year to complete a substantial research or innovation project.
-● Personalised Research: Projects will be designed around students' academic interests and intended university majors, following initial discussions with the professor.
-● Expected Outcomes: Research papers, innovative products, or working prototypes, with opportunities to enter national and international competitions, explore patent applications, and potentially pursue further development or commercialisation.
-I recommend prioritising Years 10–12, while also offering suitable opportunities for Years 7–9. Year 13 participation may be considered based on individual availability.
+● Duration: Approximately one academic year to complete a substantial research or innovation project. (Duration varies depending on the complexity of the research project)
+● Personalised Research: Projects will be designed around students' academic interests and intended university majors, following initial discussions with the mentor.
+● Expected Outcomes: Research papers, innovative products, or working prototypes, with opportunities to enter national and/or international competitions, explore Intellectual Property (IP) applications, and potentially pursue further development or commercialisation.
+We recommend prioritising Years 10–12, while also offering suitable opportunities for Years 7–9. Year 13 participation may be considered based on individual availability.
 Programme Focus
-The programme aims to provide students with meaningful, hands-on research experiences that go beyond traditional extracurricular activities, with a strong focus on tangible academic outcomes---competitions-----petty-patent----patent`,
-      th: `ข้อเสนอโครงการวิจัยและนวัตกรรมอิสระภายใต้คำแนะนำของอาจารย์มหาวิทยาลัย
-กำหนดเปิด: ภาคเรียนที่ 2 ปีการศึกษา 2026–2027
-อาจารย์ที่ปรึกษา: อาจารย์ผู้มีประสบการณ์ซึ่งปัจจุบันปฏิบัติงานที่มหาวิทยาลัยเชียงใหม่
+The programme aims to provide students with meaningful, hands-on research experiences that go beyond traditional extracurricular activities, with a strong focus on tangible academic outcomes---competitions-----Intellectual Property (IP) applications`,
+        th: `ที่ปรึกษาทางวิชาการ: นักวิทยาศาสตร์ผู้มีประสบการณ์ โดยครูประจำวิชาของโรงเรียนจะให้คำแนะนำและสนับสนุนด้านวิชาการอย่างต่อเนื่อง
 กลุ่มเป้าหมาย: นักเรียนมัธยมศึกษา Y7–Y13
 
 1. ภาพรวมโครงการ
-อาจารย์คณะวิทยาศาสตร์ มหาวิทยาลัยเชียงใหม่ ดำเนินโครงการโดยอิสระ มีประสบการณ์พัฒนาโครงการวิจัย ให้คำปรึกษาโครงงานนวัตกรรมของนักเรียน และยื่นขอสิทธิบัตรในประเทศไทย อาจารย์คุ้นเคยกับการแข่งขันวิทยาศาสตร์ระดับชาติ และได้แบ่งปันตัวอย่างงานวิจัย โอกาสสร้างนวัตกรรม และแนวทางเข้าร่วมการแข่งขัน
-ทุกคาบจัดในช่วงสุดสัปดาห์ นักเรียนจะได้ลงมือวิจัยเพื่อสร้างผลงานที่นำไปแข่งขัน หรือพัฒนาสู่การยื่นขออนุสิทธิบัตรและสิทธิบัตร
+ทุกคาบจัดในช่วงสุดสัปดาห์ นักเรียนลงมือทำวิจัยนอกห้องเรียน โดยมุ่งสร้างผลงานที่สามารถส่งแข่งขันหรือใช้ประกอบการยื่นคำขอทรัพย์สินทางปัญญา (IP)
+ก่อนเริ่มโครงการ ที่ปรึกษาจะพูดคุยกับนักเรียนเกี่ยวกับจุดแข็งทางวิชาการ ความสนใจ และสาขาที่ตั้งใจศึกษาต่อ เพื่อร่วมกันกำหนดหัวข้อวิจัย ตัวอย่างเช่น
+• แพทยศาสตร์ ทันตแพทยศาสตร์ และวิทยาศาสตร์สุขภาพ: นวัตกรรมสุขภาพ การวิจัยชีวการแพทย์ เทคโนโลยีสิ่งอำนวยความสะดวก และโครงการวิทยาศาสตร์สุขภาพอื่น ๆ ที่เหมาะสม
+• วิศวกรรมและเทคโนโลยี: หุ่นยนต์ การออกแบบผลิตภัณฑ์ วิศวกรรมสิ่งแวดล้อม และการใช้เทคโนโลยีแก้ปัญหาในทางปฏิบัติ
+• ชีววิทยาและวิทยาศาสตร์ธรรมชาติ: ความหลากหลายทางชีวภาพ การวิจัยสิ่งแวดล้อม พืชศาสตร์ และการประยุกต์ใช้ชีววิทยา
+• วิทยาการคอมพิวเตอร์: การเขียนโปรแกรม ระบบอัจฉริยะ ระบบอัตโนมัติ และนวัตกรรมทางเทคโนโลยี
+• เศรษฐศาสตร์ ธุรกิจ และสังคมศาสตร์: การวิจัยประยุกต์ ความยั่งยืน นวัตกรรมผลิตภัณฑ์ และโครงการสหวิทยาการ
 
 2. โครงสร้างโครงการ
-• กลุ่มละ 2–3 คน สูงสุด 3 คน
-• สัปดาห์ละ 2 ชั่วโมง เรียนที่ลานนาเป็นหลัก และอาจปรับสถานที่ตามความเหมาะสม
-• ใช้เวลาประมาณหนึ่งปีการศึกษาเพื่อทำโครงงานวิจัยหรือนวัตกรรม
-• หลังหารือกับอาจารย์ นักเรียนออกแบบหัวข้อตามความสนใจและสาขาที่ตั้งใจศึกษาต่อ
-• ผลงานอาจเป็นบทความวิจัย ผลิตภัณฑ์นวัตกรรม หรือต้นแบบที่ใช้งานได้ โดยมีโอกาสส่งแข่งขันในประเทศและต่างประเทศ ยื่นขอสิทธิบัตร ต่อยอดผลงาน หรือนำไปใช้เชิงพาณิชย์
-แนะนำให้รับ Y10–Y12 เป็นลำดับแรก และจัดโอกาสที่เหมาะสมสำหรับ Y7–Y9 นักเรียน Y13 พิจารณาตามเวลาที่สะดวกเป็นรายบุคคล
+• กลุ่มละ 2–3 คน ไม่เกิน 3 คน
+• สัปดาห์ละ 2 ชั่วโมง โดยเรียนที่โรงเรียนลานนาเป็นหลัก และอาจปรับสถานที่ตามความเหมาะสม
+• ใช้เวลาประมาณหนึ่งปีการศึกษาเพื่อทำโครงการวิจัยหรือนวัตกรรมให้สำเร็จ ระยะเวลาขึ้นอยู่กับความซับซ้อนของโครงการ
+• หลังหารือกับที่ปรึกษา นักเรียนจะออกแบบโครงการตามความสนใจทางวิชาการและสาขาที่ตั้งใจศึกษาต่อ
+• ผลงานอาจเป็นบทความวิจัย ผลิตภัณฑ์นวัตกรรม หรือต้นแบบที่ใช้งานได้ นักเรียนมีโอกาสเข้าร่วมการแข่งขันระดับชาติหรือระดับนานาชาติ ศึกษาแนวทางการยื่นคำขอทรัพย์สินทางปัญญา พัฒนาผลงานต่อ หรือนำไปใช้เชิงพาณิชย์
+แนะนำให้รับ Y10–Y12 เป็นลำดับแรก และจัดโอกาสที่เหมาะสมสำหรับ Y7–Y9 ส่วนนักเรียน Y13 พิจารณาตามเวลาที่สะดวกเป็นรายบุคคล
 
 จุดเน้นของโครงการ
-สร้างผลงานวิชาการจากการวิจัยจริงเพื่อต่อยอดสู่การแข่งขัน อนุสิทธิบัตร และสิทธิบัตร`
-    }
+สร้างผลงานทางวิชาการจากการลงมือวิจัยเพื่อนำไปแข่งขันและยื่นคำขอทรัพย์สินทางปัญญา (IP)`
+      }
     }
   );
 

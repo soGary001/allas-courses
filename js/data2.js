@@ -78,6 +78,7 @@ COURSES.push(
   },
   {
     id: 'mathleague', cat: 'competition', subject: 'math',
+    introTitle: { zh: '课程介绍', en: 'About This Course', th: 'รายละเอียดหลักสูตร' },
     cover: 'assets/img/covers/mathleague-cover.jpg',
     imgs: [ 
       'assets/img/class/math-award1.jpg', 'assets/img/class/math-award2.jpg',
@@ -91,17 +92,19 @@ COURSES.push(
     location: 'G306',
     competitionDate: { zh: 'Y2–Y5 通常在1月，Y6–Y10 通常在2月', en: 'Typically January for Y2–Y5 and February for Y6–Y10', th: 'ปกติ Y2–Y5 แข่งขันในเดือนมกราคม และ Y6–Y10 ในเดือนกุมภาพันธ์' },
     startMonth: '2027-01',
-    start: { zh: '2027年1月16日至5月29日', en: '16 Jan – 29 May 2027', th: '16 ม.ค. – 29 พ.ค. 2027' },
+    start: { zh: '2027年1月16日', en: '16 January 2027', th: '16 มกราคม 2027' },
+    finish: { zh: '2027年5月29日', en: '29 May 2027', th: '29 พฤษภาคม 2027' },
     duration: { zh: '15 周', en: '15 weeks', th: '15 สัปดาห์' },
     hours: { zh: '15 小时', en: '15 hours', th: '15 ชั่วโมง' },
-    schedule: { zh: '每周六（各年级时段见下表）', en: 'Saturdays (grade-level times below)', th: 'วันเสาร์ (ตามตารางระดับชั้นด้านล่าง)' },
+    schedule: { zh: '每周六', en: 'Saturday', th: 'วันเสาร์' },
     mentor: 'Mr Suresh and other experienced teachers',
     price: 13500,
-    gradeRows: [
-      { grade: 'Y2–Y3', info: '09:00–10:00' },
-      { grade: 'Y4–Y5', info: '09:00–10:00' },
-      { grade: 'Y6–Y7', info: '10:10–11:10' },
-      { grade: 'Y8–Y10', info: '11:15–12:15' }
+    scheduleName: { zh: '美国数学联盟竞赛', en: 'Math League U.S. Contest', th: 'การแข่งขัน Math League สหรัฐอเมริกา' },
+    scheduleGroups: [
+      { grade: 'Y2–Y3', time: '09:00–10:00', exam: { zh: '1月', en: 'January', th: 'มกราคม' } },
+      { grade: 'Y4–Y5', time: '09:00–10:00', exam: { zh: '1月', en: 'January', th: 'มกราคม' } },
+      { grade: 'Y6–Y7', time: '10:10–11:10', exam: { zh: '2月', en: 'February', th: 'กุมภาพันธ์' } },
+      { grade: 'Y8–Y10', time: '11:15–12:15', exam: { zh: '2月', en: 'February', th: 'กุมภาพันธ์' } }
     ],
     summary: {
       zh: '美国中小学数学竞赛，Y2–Y10 按年级参赛，以挑战性问题培养高阶思维，按年级于 1 月或 2 月参赛。',

@@ -16,7 +16,7 @@ COURSES.push(
   /* ============ 演讲辩论与 MUN ============ */
   {
     id: 'debate-intro', cat: 'speaking', subject: 'speaking',
-    cover: 'assets/img/class/debate-presentation.jpg',
+    cover: 'assets/img/covers/debate-intro.jpg',
     name: DEBATE_MUN_NAME,
     grades: 'Y4–Y6', gmin: 4, gmax: 6,
     organizer: { zh: 'All A\u0027s 校内课程', en: 'Lanna All A\u0027s', th: 'หลักสูตรภายใน All A\u0027s' },
@@ -47,7 +47,7 @@ COURSES.push(
   },
   {
     id: 'debate-comp', cat: 'speaking', subject: 'speaking',
-    cover: 'assets/img/class/debate-mentoring.jpg',
+    cover: 'assets/img/covers/debate-comp.jpg',
     name: DEBATE_MUN_NAME,
     grades: 'Y7–Y9', gmin: 7, gmax: 9,
     organizer: { zh: 'All A\u0027s 校内课程', en: 'Lanna All A\u0027s', th: 'หลักสูตรภายใน All A\u0027s' },
