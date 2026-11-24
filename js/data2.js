@@ -214,8 +214,8 @@ COURSES.push(
     gradeRows: [
       { grade: "Y2–Y3", day: { zh: "周一 15:30–17:00", en: "Monday 15:30–17:00", th: "จันทร์ 15:30–17:00" }, weeks: { zh: "16 周（1月18、25日；2月1、8、15日；3月1、8、15、22、29日；4月19、26日；5月3、10、17、24日）", en: "16 weeks (Jan 18/25, Feb 1/8/15, Mar 1/8/15/22/29, Apr 19/26, May 3/10/17/24)", th: "16 สัปดาห์ (ม.ค. 18/25, ก.พ. 1/8/15, มี.ค. 1/8/15/22/29, เม.ย. 19/26, พ.ค. 3/10/17/24)" }, hours: "21", mentor: "Ms Roz", fee: "18,900 THB", start: "2027-01-18", finish: "2027-05-24" },
       { grade: "Y4–Y5", day: { zh: "周六 14:00–16:00", en: "Saturday 14:00–16:00", th: "เสาร์ 14:00–16:00" }, weeks: { zh: "15 周（2月20、27日及4月2、10、17日停课）", en: "15 weeks (No class Feb 20/27 or Apr 2/10/17)", th: "15 สัปดาห์ (งดเรียน 20/27 ก.พ. และ 2/10/17 เม.ย.)" }, hours: "30", mentor: "Ms Roz", fee: "27,000 THB", start: "2027-01-16", finish: "2027-05-29" },
-      { grade: "Y6–Y7", day: { zh: "周二 15:00–16:00", en: "Tuesday 15:00–16:00", th: "อังคาร 15:00–16:00" }, weeks: { zh: "15 周", en: "15 weeks", th: "15 สัปดาห์" }, hours: "15", mentor: "Ms Marta", fee: "13,500 THB", start: "2027-01-19", finish: "2027-05-25" },
-      { grade: "Y8", day: { zh: "周四 15:00–16:00", en: "Thursday 15:00–16:00", th: "พฤหัสบดี 15:00–16:00" }, weeks: { zh: "16 周", en: "16 weeks", th: "16 สัปดาห์" }, hours: "16", mentor: "Mr Ethan", fee: "14,400 THB", start: "2027-01-21", finish: "2027-05-27" }
+      { grade: "Y6–Y7", day: { zh: "周二 15:15–16:15", en: "Tuesday 15:15–16:15", th: "อังคาร 15:15–16:15" }, weeks: { zh: "15 周", en: "15 weeks", th: "15 สัปดาห์" }, hours: "15", mentor: "Ms Marta", fee: "13,500 THB", start: "2027-01-19", finish: "2027-05-25" },
+      { grade: "Y8", day: { zh: "周四 15:15–16:15", en: "Thursday 15:15–16:15", th: "พฤหัสบดี 15:15–16:15" }, weeks: { zh: "16 周", en: "16 weeks", th: "16 สัปดาห์" }, hours: "16", mentor: "Mr Ethan", fee: "14,400 THB", start: "2027-01-21", finish: "2027-05-27" }
     ],
     imgs: [
       'assets/img/class/nsl-teamwork.jpg', 'assets/img/class/nsl-workshop.jpg', 'assets/img/class/nsl-classroom.jpg',
