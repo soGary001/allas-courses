@@ -182,11 +182,6 @@ button { font-family: inherit; cursor: pointer; }
   box-shadow: 0 2px 6px rgba(31,77,46,0.30);
   z-index: 2;
 }
-.card.is-closed .card-cover img { filter: grayscale(1); }
-.registration-status {
-  display: inline-block; align-self: flex-start; padding: 4px 10px; border-radius: 6px;
-  background: #e9ebeb; color: #353e40; font-size: 13px; font-weight: 700;
-}
 .full-cover .card-cover img, .full-cover .detail-cover { object-fit: contain; background: #faf8f1; }
 .full-cover .card-body .badge-cat { position: static; align-self: flex-start; }
 .intro-illustration { width: min(100%, 396px); height: auto; display: block; margin: 16px auto; }
@@ -623,3 +618,45 @@ body.modal-open { overflow: hidden; }
   .grade-cell { flex: 0 0 84px; }
   .gallery { column-count: 1; }
 }
+
+/* Closed-course showcase */
+.archive-jump {
+  display:inline-flex; align-items:center; min-height:40px; margin:0 0 14px;
+  padding:0; border:0; border-bottom:1px solid #a68d91; background:none;
+  color:#653646; line-height:1.35; font-family:inherit; font-size:14px; font-weight:600;
+}
+.course-archive {
+  --wine:#634152;
+  margin:42px 0 30px; scroll-margin-top:84px;
+}
+.archive-head {
+  display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 18px;
+  padding:20px 0 17px; border-top:2px solid #cab9bf;
+}
+.archive-head h2,.archive-notice h2 {
+  font:700 clamp(21px,2.1vw,28px)/1.35 'Songti SC','STSong',Georgia,serif; color:#4e3543;
+}
+.archive-head p,.archive-notice p {color:#65565c; font-size:14px; line-height:1.65}
+.archive-list {list-style:none; margin:0; padding:0}
+.archive-item {display:flex; flex-direction:column; flex:1; min-width:0; color:inherit; text-decoration:none; scroll-margin-top:88px}
+.archive-band {
+  position:absolute; bottom:0; left:0; right:0; min-height:32px;
+  display:flex; align-items:center; gap:8px; padding:5px 16px;
+  background:var(--wine); color:white; font-size:13px; font-weight:650; line-height:1.55;
+}
+.archive-calendar {
+  position:relative; display:inline-block; flex:0 0 13px;
+  width:13px; height:12px; border:1.4px solid currentColor; border-radius:2px;
+}
+.archive-calendar::before {content:""; position:absolute; top:2px; left:0; right:0; border-top:1px solid currentColor}
+.archive-calendar::after {content:""; position:absolute; top:-3px; left:2px; width:4px; height:3px; border-inline:1.3px solid currentColor}
+.archive-card .card-foot {align-items:center; flex-direction:row; min-height:44px; color:#563a49; font-size:14px; font-weight:650}
+.archive-card .archive-arrow {font:400 19px/1 Arial,sans-serif}
+.archive-card:hover .archive-read,.archive-item:focus-visible .archive-read {text-decoration:underline; text-underline-offset:3px}
+.archive-card:focus-within {outline:3px solid var(--wine); outline-offset:3px}
+.archive-item:focus-visible {outline:none}
+.archive-jump:focus-visible {outline:3px solid #735461; outline-offset:3px}
+.archive-notice {margin:0 0 18px; padding:17px 22px; background:#f0e7e9; border-left:4px solid #634152; border-radius:0 10px 10px 0}
+.archive-notice h2 {font-size:22px}.archive-notice p {margin:5px 0 0}
+@media(max-width:640px){.course-archive{margin-top:28px;scroll-margin-top:110px}.archive-head{padding:15px 0}.archive-item{scroll-margin-top:110px}}
+.archive-jump[hidden],.course-archive[hidden]{display:none}

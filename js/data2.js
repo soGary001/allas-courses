@@ -303,6 +303,8 @@ The Physics Excellence Programme aims to strengthen students' understanding of P
   {
     id: 'c3l6', cat: 'competition', subject: 'chemistry',
     registrationClosed: true,
+    archiveCover: "assets/img/covers/c3l6-chemistry.jpg",
+    archiveSummary: { zh: "运用课堂所学，分析历年剑桥化学挑战赛中的陌生问题。", en: "Apply classroom chemistry to unfamiliar problems from past challenge papers.", th: "ประยุกต์ความรู้เคมีเพื่อแก้โจทย์ที่ไม่คุ้นเคยจากข้อสอบการแข่งขันย้อนหลัง" },
     cover: 'assets/logos/c3l6.jpg',
     name: { zh: '剑桥化学挑战赛（C3L6）', en: 'Cambridge Chemistry Challenge (C3L6)', th: 'การท้าทายเคมีเคมบริดจ์ (C3L6)' },
     grades: 'Y11–Y13', gmin: 11, gmax: 13,
@@ -338,6 +340,8 @@ The Physics Excellence Programme aims to strengthen students' understanding of P
   {
     id: 'icq', cat: 'competition', subject: 'chemistry',
     registrationClosed: true,
+    archiveCover: "assets/img/covers/icq-student.jpg",
+    archiveSummary: { zh: "用化学概念解释身边的现象，练习应用型竞赛题。", en: "Use chemistry to explain everyday phenomena and practise applied competition questions.", th: "ใช้แนวคิดทางเคมีอธิบายปรากฏการณ์รอบตัวและฝึกโจทย์ประยุกต์" },
     cover: 'assets/logos/icq.jpg',
     name: { zh: '国际化学知识竞赛（ICQ）', en: 'International Chemistry Quiz (ICQ)', th: 'แบบทดสอบเคมีนานาชาติ (ICQ)' },
     grades: 'Y9–Y11', gmin: 9, gmax: 11,

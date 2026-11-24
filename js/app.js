@@ -14,6 +14,7 @@
     time: 'all',
     price: 'all',
     q: '',
+    archiveReturnId: '',
     signupUrl: ''   // 当前详情页课程的专属报名表单链接
   };
 
@@ -115,7 +116,7 @@
     }
     if (state.q) {
       var q = state.q.toLowerCase();
-      var hay = [L(c.name), c.name.zh, c.name.en, c.name.th, L(SUBJECTS[c.subject].name),
+      var hay = [L(c.name), c.name.zh, c.name.en, c.name.th, L(c.archiveTitle), L(SUBJECTS[c.subject].name),
         c.organizer ? L(c.organizer) : '', L(c.mentor), c.searchTerms || ''].join(' ').toLowerCase();
       if (hay.indexOf(q) === -1) return false;
     }
@@ -173,7 +174,6 @@
       ? '<span class="meta-item">🗓 ' + esc(st) + '</span>'
       : '<span class="meta-item meta-tbd">🗓 ' + T('tbd') + '</span>';
     var soonBadge = c.comingSoon ? '<span class="badge-soon">' + T('comingSoon') + '</span>' : '';
-    var closedStatus = c.registrationClosed ? '<span class="registration-status">' + T('signupClosed') + '</span>' : '';
     var footHtml = c.comingSoon
       ? '<div class="card-foot card-foot-soon"><span class="coming-soon-tag">⏳ ' + T('comingSoon') + '</span></div>'
       : '<div class="card-foot">' +
@@ -184,12 +184,12 @@
           '</div>' +
         '</div>';
     return '' +
-      '<article class="card card-soon' + (c.comingSoon ? ' is-soon' : '') + (c.registrationClosed ? ' is-closed' : '') + (c.fullCover ? ' full-cover' : '') + '" data-id="' + c.id + '">' +
+      '<article class="card card-soon' + (c.comingSoon ? ' is-soon' : '') + (c.fullCover ? ' full-cover' : '') + '" data-id="' + c.id + '">' +
         '<div class="card-cover">' + soonBadge + '<img src="' + courseCover(c) + '" alt="' + esc(L(c.name)) + '" loading="lazy">' +
           (c.comingSoon || c.fullCover ? '' : '<span class="badge-cat">' + L(CATEGORIES[c.cat]) + '</span>') +
         '</div>' +
         '<div class="card-body">' +
-          (c.fullCover ? '<span class="badge-cat">' + esc(L(CATEGORIES[c.cat])) + '</span>' : '') + closedStatus +
+          (c.fullCover ? '<span class="badge-cat">' + esc(L(CATEGORIES[c.cat])) + '</span>' : '') +
           '<h3 class="card-title">' + esc(L(c.name)) + '</h3>' +
           '<div class="card-meta">' +
             '<span class="meta-item">' + (SUBJECTS[c.subject].icon) + ' ' + esc(L(SUBJECTS[c.subject].name)) + '</span>' +
@@ -200,6 +200,28 @@
           footHtml +
         '</div>' +
       '</article>';
+  }
+
+  function archiveCardHTML(c) {
+    return '<li class="card archive-card"><a class="archive-item" data-archive-id="' + esc(c.id) + '" href="#/course/' + esc(c.id) + '">' +
+      '<div class="card-cover"><img loading="lazy" alt="" src="' + esc(c.archiveCover || courseCover(c)) + '">' +
+        '<span class="badge-cat">' + esc(L(CATEGORIES[c.cat])) + '</span>' +
+        '<span class="archive-band"><i aria-hidden="true" class="archive-calendar"></i>' + T('signupClosed') + '</span></div>' +
+      '<div class="card-body"><h3 class="card-title">' + esc(L(c.archiveTitle || c.name)) + '</h3>' +
+        '<div class="card-meta"><span class="meta-item">' + esc(L(SUBJECTS[c.subject].name)) + '</span><span class="meta-item">' + esc(gradeText(c)) + '</span></div>' +
+        '<p class="card-summary">' + esc(L(c.archiveSummary || c.summary)) + '</p>' +
+        '<div class="card-foot"><span class="archive-read">' + T('archiveLink') + '</span><span aria-hidden="true" class="archive-arrow">→</span></div>' +
+      '</div></a></li>';
+  }
+
+  function renderArchive(courses) {
+    var jump = document.getElementById('archiveJump');
+    document.getElementById('archiveBox').hidden = !courses.length;
+    jump.hidden = !courses.length;
+    jump.textContent = T('archiveHeading') + ' (' + courses.length + ') ↓';
+    document.getElementById('archiveHeading').textContent = T('archiveHeading');
+    document.getElementById('archiveNote').textContent = T('archiveNote');
+    document.getElementById('archiveList').innerHTML = courses.map(archiveCardHTML).join('');
   }
 
   function renderList() {
@@ -213,11 +235,12 @@
     });
     document.getElementById('resultCount').textContent = T('resultCount').replace('{n}', list.length);
     var grid = document.getElementById('courseGrid');
+    renderArchive(list.filter(function (c) { return c.registrationClosed; }));
     if (!list.length) {
       grid.innerHTML = '<div class="no-result">' + T('noResult') + '</div>';
       return;
     }
-    grid.innerHTML = list.map(cardHTML).join('');
+    grid.innerHTML = list.filter(function (c) { return !c.registrationClosed; }).map(cardHTML).join('');
     grid.querySelectorAll('.btn-detail').forEach(function (b) {
       b.addEventListener('click', function (e) { e.stopPropagation(); location.hash = '#/course/' + b.dataset.detail; });
     });
@@ -286,6 +309,8 @@
     if (c.comingSoon) { location.hash = '#/'; return; }
 
     setSignup(c);
+    state.archiveReturnId = c.registrationClosed ? c.id : '';
+    if (c.registrationClosed) document.getElementById('bottomBar').classList.add('hidden');
 
     var gallery = '';
     if (c.imgs && c.imgs.length) {
@@ -478,13 +503,13 @@
     document.getElementById('detailRoot').innerHTML = '' +
       '<div class="detail-wrap">' +
         '<a class="back-link" href="#/">' + T('backToList') + '</a>' +
+        (c.registrationClosed ? '<div class="archive-notice"><h2>' + T('archiveDetail') + '</h2><p>' + T('archiveDetailNote') + '</p></div>' : '') +
         '<div class="detail-hero' + (c.fullCover ? ' full-cover' : '') + '">' +
           '<img class="detail-cover" src="' + courseCover(c) + '" alt="' + esc(L(c.name)) + '">' +
           '<div class="detail-hero-text">' +
             '<span class="badge-cat">' + L(CATEGORIES[c.cat]) + '</span>' +
             '<h1>' + esc(L(c.name)) + '</h1>' +
             '<div class="detail-tags">' +
-              (c.registrationClosed ? '<span class="registration-status">' + T('signupClosed') + '</span>' : '') +
               '<span class="chip chip-green">' + (SUBJECTS[c.subject].icon) + ' ' + esc(L(SUBJECTS[c.subject].name)) + '</span>' +
               '<span class="chip chip-green">🎓 ' + esc(gradeText(c)) + '</span>' +
               '<span class="chip ' + (c.price == null ? 'chip-tbd' : 'chip-wheat') + '">' +
@@ -635,11 +660,23 @@
       state.signupUrl = '';
       listPage.classList.remove('hidden');
       renderList();
+      if (state.archiveReturnId) {
+        var card = document.querySelector('[data-archive-id="' + state.archiveReturnId + '"]');
+        if (card) {
+          card.focus({ preventScroll: true });
+          card.scrollIntoView({ block: 'center', behavior: 'instant' });
+        }
+        state.archiveReturnId = '';
+      }
     }
   }
 
   /* ---------- 初始化 ---------- */
   function init() {
+    document.getElementById('archiveJump').addEventListener('click', function () {
+      document.getElementById('archiveBox').scrollIntoView({ block: 'start' });
+      document.getElementById('archiveHeading').focus({ preventScroll: true });
+    });
     document.querySelectorAll('.lang-btn').forEach(function (b) {
       b.addEventListener('click', function () {
         state.lang = b.dataset.lang;

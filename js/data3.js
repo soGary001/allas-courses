@@ -79,6 +79,9 @@ COURSES.push(
   {
     id: 'mun-intro', cat: 'speaking', subject: 'speaking',
     registrationClosed: true,
+    archiveCover: "assets/img/covers/speaking-class.jpg",
+    archiveTitle: { zh: "模拟联合国入门（MUN）", en: "Introduction to Model United Nations", th: "สหประชาชาติจำลองเบื้องต้น" },
+    archiveSummary: { zh: "了解联合国议事规则，体验代表发言和决议起草。", en: "Explore committee procedure, delegate speeches and resolution writing.", th: "เรียนรู้กติกาการประชุม ฝึกกล่าวสุนทรพจน์ และร่างข้อมติ" },
     cover: 'assets/img/covers/mun-intro.jpg',
     name: { zh: 'MUN 入门（Introduction to MUN）-（2026 October camp）', en: 'Introduction to MUN -（2026 October camp）', th: 'MUN เบื้องต้น -（2026 October camp）' },
     grades: 'Y7–Y13', gmin: 7, gmax: 13,
@@ -105,6 +108,9 @@ COURSES.push(
   {
     id: 'mun-comp', cat: 'speaking', subject: 'speaking',
     registrationClosed: true,
+    archiveCover: "assets/img/class/mun-comp-2026-02-assembly.jpg",
+    archiveTitle: { zh: "竞技模拟联合国（MUN）", en: "Competitive Model United Nations", th: "สหประชาชาติจำลองระดับแข่งขัน" },
+    archiveSummary: { zh: "以国家代表的身份参与模拟会议，练习发言、谈判与团队协作。", en: "Practise public speaking, negotiation and teamwork as a delegate at a simulated conference.", th: "ฝึกการพูด การเจรจา และการทำงานเป็นทีมในฐานะผู้แทนประเทศในการประชุมจำลอง" },
     cover: 'assets/img/class/debate-mun1.jpg',
     name: { zh: '竞技 MUN（Competitive MUN）-（2026 October Camp）', en: 'Competitive MUN - (2026 October Camp)', th: 'MUN แข่งขัน - (ค่ายตุลาคม 2026)' },
     grades: 'Y4–Y9', gmin: 4, gmax: 9,
